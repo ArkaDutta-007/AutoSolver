@@ -1,0 +1,4 @@
+Problem 5. Let {\Bbb{R}_{>0}} be the set of positive real numbers. Determine all functions {f: \Bbb{R}_{>0} \to \Bbb{R}_{>0}} such that
+
+\displaystyle \sqrt{\frac{x^2+f(y)^2}{2}} \geq \frac{f(x)+y}{2} \geq \sqrt{x f(y)} for every {x, y \in \Bbb{R}_{>0}}.
+

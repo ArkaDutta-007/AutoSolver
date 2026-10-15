@@ -1,0 +1,167 @@
+[
+ {
+  "model": "hf.co/unsloth/Qwen3.8-27B-GGUF:Q8_0",
+  "case": "ge_triangle_ineq",
+  "temp": 0.2,
+  "n": 5,
+  "passes": 2,
+  "think": "high",
+  "runs": [
+   {
+    "ok": true,
+    "secs": 2392.5,
+    "sig": "theorem norm_sum_le_real_inner_product_space (E : Type*) [NormedAddCommGroup E] [InnerProductSpace \u211d E] (x y : E) : \u2016x + y\u2016 \u2264 \u2016x\u2016 + \u2016y\u2016"
+   },
+   {
+    "ok": false,
+    "secs": 819.3,
+    "sig": ""
+   },
+   {
+    "ok": false,
+    "secs": 2194.8,
+    "sig": ""
+   },
+   {
+    "ok": false,
+    "secs": 2378.7,
+    "sig": ""
+   },
+   {
+    "ok": true,
+    "secs": 382.8,
+    "sig": "theorem real_inner_product_space_norm_add_le_norm_add_norm (E : Type*) [NormedAddCommGroup E] [InnerProductSpace \u211d E] (x y : E) : \u2016x + y\u2016 \u2264 \u2016x\u2016 + \u2016y\u2016"
+   }
+  ]
+ },
+ {
+  "model": "hf.co/unsloth/Qwen3.8-27B-GGUF:Q8_0",
+  "case": "co_sum_first_n",
+  "temp": 0.2,
+  "n": 5,
+  "passes": 2,
+  "think": "high",
+  "runs": [
+   {
+    "ok": false,
+    "secs": 442.0,
+    "sig": ""
+   },
+   {
+    "ok": false,
+    "secs": 185.3,
+    "sig": ""
+   },
+   {
+    "ok": true,
+    "secs": 563.2,
+    "sig": "theorem sum_first_n_positive_integers_eq_n_mul_succ_div_two (n : \u2115) : Finset.sum (Finset.range n) (fun i => i + 1) = n * (n + 1) / 2"
+   },
+   {
+    "ok": false,
+    "secs": 431.1,
+    "sig": ""
+   },
+   {
+    "ok": true,
+    "secs": 846.0,
+    "sig": "theorem sum_first_n_positive_ints (n : \u2115) : Finset.sum (Finset.range (n + 1)) (fun i => i) = (n * (n + 1)) / 2"
+   }
+  ]
+ },
+ {
+  "model": "hf.co/unsloth/Qwen3.8-27B-GGUF:Q8_0",
+  "case": "an_cont_compact",
+  "temp": 0.2,
+  "n": 5,
+  "passes": 4,
+  "think": "high",
+  "runs": [
+   {
+    "ok": true,
+    "secs": 287.2,
+    "sig": "theorem continuousOn_Icc_attains_max (f : \u211d \u2192 \u211d) (a b : \u211d) (hab : a \u2264 b) (hf : ContinuousOn f (Set.Icc a b)) : \u2203 x \u2208 Set.Icc a b, \u2200 y \u2208 Set.Icc a b, f y \u2264 f x"
+   },
+   {
+    "ok": true,
+    "secs": 505.3,
+    "sig": "theorem continuousOn_closed_bounded_interval_attains_maximum (f : \u211d \u2192 \u211d) (a b : \u211d) (hab : a \u2264 b) (hf : ContinuousOn f (Set.Icc a b)) : \u2203 x \u2208 Set.Icc a b, \u2200 y \u2208 Set.Icc a b, f y \u2264 f x"
+   },
+   {
+    "ok": true,
+    "secs": 368.3,
+    "sig": "theorem continuous_on_closed_bounded_interval_attains_max (f : \u211d \u2192 \u211d) (a b : \u211d) (hab : a \u2264 b) (hf : ContinuousOn f (Set.Icc a b)) : \u2203 x \u2208 Set.Icc a b, \u2200 y \u2208 Set.Icc a b, f y \u2264 f x"
+   },
+   {
+    "ok": false,
+    "secs": 283.6,
+    "sig": ""
+   },
+   {
+    "ok": true,
+    "secs": 357.5,
+    "sig": "theorem continuousOn_Icc_attains_max (f : \u211d \u2192 \u211d) (a b : \u211d) (hab : a \u2264 b) (hf : ContinuousOn f (Set.Icc a b)) : \u2203 x \u2208 Set.Icc a b, \u2200 y \u2208 Set.Icc a b, f y \u2264 f x"
+   }
+  ]
+ },
+ {
+  "model": "hf.co/unsloth/Qwen3.8-27B-GGUF:Q8_0",
+  "case": "ph_shm_energy",
+  "temp": 0.2,
+  "n": 5,
+  "passes": 2,
+  "think": "high",
+  "runs": [
+   {
+    "ok": false,
+    "secs": 295.2,
+    "sig": ""
+   },
+   {
+    "ok": true,
+    "secs": 304.9,
+    "sig": "theorem second_derivative_shm_cos (A omega t : \u211d) : deriv (deriv (fun s : \u211d => A * Real.cos (omega * s))) t = -(omega ^ 2) * (A * Real.cos (omega * t))"
+   },
+   {
+    "ok": false,
+    "secs": 241.7,
+    "sig": ""
+   },
+   {
+    "ok": false,
+    "secs": 1721.1,
+    "sig": ""
+   },
+   {
+    "ok": true,
+    "secs": 450.3,
+    "sig": "theorem second_derivative_shm_cos (A omega t : \u211d) : deriv (deriv (fun s => A * Real.cos (omega * s))) t = -(omega ^ 2) * (A * Real.cos (omega * t))"
+   }
+  ]
+ },
+ {
+  "model": "hf.co/unsloth/Qwen3.8-27B-GGUF:Q8_0",
+  "case": "ge_triangle_ineq",
+  "temp": 0.5,
+  "n": 3,
+  "passes": 1,
+  "think": "high",
+  "runs": [
+   {
+    "ok": true,
+    "secs": 685.5,
+    "sig": "theorem real_inner_product_space_norm_add_le {E : Type*} [NormedAddCommGroup E] [InnerProductSpace \u211d E] (x y : E) : \u2016x + y\u2016 \u2264 \u2016x\u2016 + \u2016y\u2016"
+   },
+   {
+    "ok": false,
+    "secs": 756.8,
+    "sig": ""
+   },
+   {
+    "ok": false,
+    "secs": 1300.7,
+    "sig": ""
+   }
+  ]
+ }
+]

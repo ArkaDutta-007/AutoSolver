@@ -1,0 +1,1682 @@
+[
+ {
+  "name": "ZMod.isSquare_neg_one_of_eq_sq_add_sq_of_isCoprime",
+  "informal": "If the integer `n` is a sum of two squares of coprime integers, then `-1` is a square modulo `n`.",
+  "signature": "{n x y : \u2124} (h : n = x ^ 2 + y ^ 2) (hc : IsCoprime x y) : IsSquare (-1 : ZMod n.natAbs)",
+  "module": "NumberTheory.SumTwoSquares",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "Prime.pow_inj",
+  "informal": "Two prime powers with positive exponents are equal only when the primes and the exponents are equal.",
+  "signature": "{p q m n : \u2115} (hp : p.Prime) (hq : q.Prime) (h : p ^ (m + 1) = q ^ (n + 1)) : p = q \u2227 m = n",
+  "module": "Data.Nat.Prime.Int",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "head_add_length_le_nat",
+  "informal": "In \u2115, the head and tail of an `LTSeries` differ at least by the length of the series",
+  "signature": "(p : LTSeries \u2115) : p.head + p.length \u2264 p.last",
+  "module": "Order.RelSeries",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "factorMultiset_ofPrime",
+  "informal": "Factoring a prime gives the corresponding one-element multiset.",
+  "signature": "(p : Nat.Primes) : (p : \u2115+).factorMultiset = PrimeMultiset.ofPrime p",
+  "module": "Data.PNat.Factors",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "IsTopologicalSemiring.toIsTopologicalRing",
+  "informal": "If `R` is a ring which is a topological semiring, then it is automatically a topological ring. This exists so that one can place a topological ring structure on `R` without explicitly proving `continuous_neg`.",
+  "signature": "[TopologicalSpace R] [NonAssocRing R] (_ : IsTopologicalSemiring R) : IsTopologicalRing R where toContinuousNeg",
+  "module": "Topology.Algebra.Ring.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "extend_partialOrder",
+  "informal": "**Szpilrajn extension theorem**: any partial order can be extended to a linear order.",
+  "signature": "{\u03b1 : Type u} (r : \u03b1 \u2192 \u03b1 \u2192 Prop) [IsPartialOrder \u03b1 r] : \u2203 s : \u03b1 \u2192 \u03b1 \u2192 Prop, IsLinearOrder \u03b1 s \u2227 r \u2264 s",
+  "module": "Order.Extension.Linear",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "young_inequality",
+  "informal": "**Young's inequality**, `\u211d\u22650` version. We use `{p q : \u211d\u22650}` in order to avoid constructing witnesses of `0 \u2264 p` and `0 \u2264 q` for the denominators.",
+  "signature": "(a b : \u211d\u22650) {p q : \u211d\u22650} (hpq : p.HolderConjugate q) : a * b \u2264 a ^ (p : \u211d) / p + b ^ (q : \u211d) / q",
+  "module": "Analysis.MeanInequalities",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "convexOn_of_deriv2_nonneg",
+  "informal": "If a function `f` is continuous on a convex set `D \u2286 \u211d`, is twice differentiable on its interior, and `f''` is nonnegative on the interior, then `f` is convex on `D`.",
+  "signature": "{D : Set \u211d} (hD : Convex \u211d D) {f : \u211d \u2192 \u211d} (hf : ContinuousOn f D) (hf' : DifferentiableOn \u211d f (interior D)) (hf'' : DifferentiableOn \u211d (deriv f) (interior D)) (hf''_nonneg : \u2200 x \u2208 interior D, 0 \u2264 deriv^[2] f x) : ConvexOn \u211d D f",
+  "module": "Analysis.Convex.Deriv",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "le_of_embedding",
+  "informal": "If we have an embedding from `Fin m` to `Fin n`, then `m \u2264 n`. See also `Fintype.card_le_of_embedding` for the generalisation to arbitrary finite types.",
+  "signature": "(f : Fin m \u21aa Fin n) : m \u2264 n",
+  "module": "Data.Fin.Pigeonhole",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "nhdsNE_of_nhdsNE_sdiff_finite",
+  "informal": "In a T1Space, punctured neighborhoods are stable under removing finite sets of points.",
+  "signature": "{X : Type*} [TopologicalSpace X] [T1Space X] {x : X} {U s : Set X} (hU : U \u2208 \ud835\udcdd[\u2260] x) (hs : Finite s) : U \\ s \u2208 \ud835\udcdd[\u2260] x",
+  "module": "Topology.DiscreteSubset",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "strictConcaveOn_of_deriv2_neg",
+  "informal": "If a function `f` is continuous on a convex set `D \u2286 \u211d` and `f''` is strictly negative on the interior, then `f` is strictly concave on `D`. Note that we don't require twice differentiability explicitly as it already implied by the second derivative being strictly negative, except at at most one point.",
+  "signature": "{D : Set \u211d} (hD : Convex \u211d D) {f : \u211d \u2192 \u211d} (hf : ContinuousOn f D) (hf'' : \u2200 x \u2208 interior D, deriv^[2] f x < 0) : StrictConcaveOn \u211d D f",
+  "module": "Analysis.Convex.Deriv",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "isUnit_iff_not_dvd_char_of_ringChar_ne_zero",
+  "informal": "A prime `p` is a unit in a commutative ring `R` of nonzero characteristic iff it does not divide the characteristic.",
+  "signature": "(R : Type*) [CommRing R] (p : \u2115) [Fact p.Prime] (hR : ringChar R \u2260 0) : IsUnit (p : R) \u2194 \u00acp \u2223 ringChar R",
+  "module": "Algebra.CharP.CharAndCard",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "OrderIso.map_tsub",
+  "informal": "An order isomorphism between types with ordered subtraction preserves subtraction provided that it preserves addition.",
+  "signature": "{M N : Type*} [Preorder M] [Add M] [Sub M] [OrderedSub M] [PartialOrder N] [Add N] [Sub N] [OrderedSub N] (e : M \u2243o N) (h_add : \u2200 a b, e (a + b) = e a + e b) (a b : M) : e (a - b) = e a - e b",
+  "module": "Algebra.Order.Sub.Unbundled.Hom",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "NNReal.lintegral_mul_le_Lp_mul_Lq",
+  "informal": "H\u00f6lder's inequality for functions `\u03b1 \u2192 \u211d\u22650`. The integral of the product of two functions is bounded by the product of their `\u2112p` and `\u2112q` seminorms when `p` and `q` are conjugate exponents.",
+  "signature": "{p q : \u211d} (hpq : p.HolderConjugate q) {f g : \u03b1 \u2192 \u211d\u22650} (hf : AEMeasurable f \u03bc) (hg : AEMeasurable g \u03bc) : (\u222b\u207b a, (f * g) a \u2202\u03bc) \u2264 (\u222b\u207b a, (f a : \u211d\u22650\u221e) ^ p \u2202\u03bc) ^ (1 / p) * (\u222b\u207b a, (g a : \u211d\u22650\u221e) ^ q \u2202\u03bc) ^ (1 / q)",
+  "module": "MeasureTheory.Integral.MeanInequalities",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "Nat.Primes.summable_rpow",
+  "informal": "The series over `p^r` for primes `p` converges if and only if `r < -1`.",
+  "signature": "{r : \u211d} : Summable (fun p : Nat.Primes \u21a6 (p : \u211d) ^ r) \u2194 r < -1",
+  "module": "NumberTheory.SumPrimeReciprocals",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "summable_indicator_mod_iff_summable_indicator_mod",
+  "informal": "If a decreasing sequence of real numbers is summable on one residue class modulo `m`, then it is also summable on every other residue class mod `m`.",
+  "signature": "{m : \u2115} [NeZero m] {f : \u2115 \u2192 \u211d} (hf : Antitone f) {k : ZMod m} (l : ZMod m) (hs : Summable ({n : \u2115 | (n : ZMod m) = k}.indicator f)) : Summable ({n : \u2115 | (n : ZMod m) = l}.indicator f)",
+  "module": "Analysis.SumOverResidueClass",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "succ_dvd_centralBinom",
+  "informal": "A crucial lemma to ensure that Catalan numbers can be defined via their explicit formula `catalan n = n.centralBinom / (n + 1)`.",
+  "signature": "(n : \u2115) : n + 1 \u2223 n.centralBinom",
+  "module": "Data.Nat.Choose.Central",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "Nat.range_mul_add",
+  "informal": "The range of `(m * \u00b7 + k)` on natural numbers is the set of elements `\u2265 k` in the residue class of `k` mod `m`.",
+  "signature": "(m k : \u2115) : Set.range (fun n : \u2115 \u21a6 m * n + k) = {n : \u2115 | (n : ZMod m) = k \u2227 k \u2264 n}",
+  "module": "Data.ZMod.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "imp_forall_iff",
+  "informal": "We intentionally restrict the type of `\u03b1` in this lemma so that this is a safer to use in simp than `forall_comm`.",
+  "signature": "{\u03b1 : Type*} {p : Prop} {q : \u03b1 \u2192 Prop} : (p \u2192 \u2200 x, q x) \u2194 \u2200 x, p \u2192 q x",
+  "module": "Logic.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "nonempty_orderEmbedding_of_finite_infinite",
+  "informal": "Any finite linear order order-embeds into any infinite linear order.",
+  "signature": "(\u03b1 : Type*) [LinearOrder \u03b1] [h\u03b1 : Finite \u03b1] (\u03b2 : Type*) [LinearOrder \u03b2] [h\u03b2 : Infinite \u03b2] : Nonempty (\u03b1 \u21aao \u03b2)",
+  "module": "Data.Finset.Sort",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "discreteTopology_or_nontriviallyNormedField",
+  "informal": "A normed field is either nontrivially normed or has a discrete topology. In the discrete topology case, all the norms are 1, by `norm_eq_one_iff_ne_zero_of_discrete`. The nontrivially normed field instance is provided by a subtype with a proof that the forgetful inheritance to the existing `NormedField` instance is definitionally true. This allows one to have the new `NontriviallyNormedField` instance without data clashes.",
+  "signature": "(\ud835\udd5c : Type*) [h : NormedField \ud835\udd5c] : DiscreteTopology \ud835\udd5c \u2228 Nonempty ({h' : NontriviallyNormedField \ud835\udd5c // h'.toNormedField = h})",
+  "module": "Analysis.Normed.Field.Lemmas",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "card_unique",
+  "informal": "Any two enumerations of the same type have the same length.",
+  "signature": "{\u03b1 : Type u} (e\u2081 e\u2082 : FinEnum \u03b1) : e\u2081.card = e\u2082.card",
+  "module": "Data.FinEnum",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "inv_eq_self_iff",
+  "informal": "In the unit group of an integral domain, a unit is its own inverse iff the unit is one or one's additive inverse.",
+  "signature": "[Ring R] [NoZeroDivisors R] (u : R\u02e3) : u\u207b\u00b9 = u \u2194 u = 1 \u2228 u = -1",
+  "module": "Algebra.Ring.Commute",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "isClosedMap",
+  "informal": "Any continuous function on compact Hausdorff spaces is a closed map.",
+  "signature": "{X Y : CompHausLike.{u} P} (f : X \u27f6 Y) : IsClosedMap f",
+  "module": "Topology.Category.CompHausLike.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "image_nontrivial_iff_of_injOn",
+  "informal": "A finset is nontrivial iff its image under a function injective on the finset is.",
+  "signature": "(hf : Set.InjOn f s) : (s.image f).Nontrivial \u2194 s.Nontrivial",
+  "module": "Data.Finset.Image",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "finite_rat_abs_sub_lt_one_div_den_sq",
+  "informal": "A rational number has only finitely many good rational approximations.",
+  "signature": "(\u03be : \u211a) : {q : \u211a | |\u03be - q| < 1 / (q.den : \u211a) ^ 2}.Finite",
+  "module": "NumberTheory.DiophantineApproximation.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "rpow_one_add_le_one_add_mul_self",
+  "informal": "**Bernoulli's inequality** for real exponents, non-strict version: for `0 \u2264 p \u2264 1` and `-1 \u2264 s` we have `(1 + s) ^ p \u2264 1 + p * s`.",
+  "signature": "{s : \u211d} (hs : -1 \u2264 s) {p : \u211d} (hp1 : 0 \u2264 p) (hp2 : p \u2264 1) : (1 + s) ^ p \u2264 1 + p * s",
+  "module": "Analysis.Convex.SpecificFunctions.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "card_range_le",
+  "informal": "Any map from `Fin m` reaches at most `m` different values. See also `Fintype.card_range_le` for the generalisation to an arbitrary finite type.",
+  "signature": "{\u03b1 : Type*} [Fintype \u03b1] [DecidableEq \u03b1] (f : Fin m \u2192 \u03b1) : Fintype.card (Set.range f) \u2264 m",
+  "module": "Data.Fin.Pigeonhole",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "Filter.coprod\u1d62_cocompact",
+  "informal": "**Tychonoff's theorem** formulated in terms of filters: `Filter.cocompact` on an indexed product type `\u03a0 d, X d` the `Filter.coprod\u1d62` of filters `Filter.cocompact` on `X d`.",
+  "signature": "{X : \u03b9 \u2192 Type*} [\u2200 d, TopologicalSpace (X d)] : (Filter.coprod\u1d62 fun d => Filter.cocompact (X d)) = Filter.cocompact (\u2200 d, X d)",
+  "module": "Topology.Compactness.Compact",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "le_rpow_add",
+  "informal": "For `0 \u2264 x`, the only problematic case in the equality `x ^ y * x ^ z = x ^ (y + z)` is for `x = 0` and `y + z = 0`, where the right-hand side is `1` while the left-hand side can vanish. The inequality is always true, though, and given in this lemma.",
+  "signature": "{x : \u211d} (hx : 0 \u2264 x) (y z : \u211d) : x ^ y * x ^ z \u2264 x ^ (y + z)",
+  "module": "Analysis.SpecialFunctions.Pow.Real",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "Nat.isSemilinearSet_iff_ultimately_periodic",
+  "informal": "A set of `\u2115` is semilinear if and only if it is ultimately periodic, i.e. periodic after some number `k`.",
+  "signature": "{s : Set \u2115} : IsSemilinearSet s \u2194 \u2203 k, \u2203 p > 0, \u2200 x \u2265 k, x \u2208 s \u2194 x + p \u2208 s",
+  "module": "ModelTheory.Arithmetic.Presburger.Semilinear.Defs",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "equiv_free_prod_prod_multiplicative_zmod",
+  "informal": "The **Structure theorem of finitely generated abelian groups** in a multiplicative version: Any finitely generated abelian group is the product of a power of `\u2124` and a direct product of some `ZMod (p i ^ e i)` for some prime powers `p i ^ e i`.",
+  "signature": "(G : Type*) [CommGroup G] [hG : Group.FG G] : \u2203 (\u03b9 j : Type) (_ : Fintype \u03b9) (_ : Fintype j) (p : \u03b9 \u2192 \u2115) (_ : \u2200 i, Nat.Prime <| p i) (e : \u03b9 \u2192 \u2115), Nonempty <| G \u2243* (j \u2192 Multiplicative \u2124) \u00d7 ((i : \u03b9) \u2192 Multiplicative (ZMod (p i ^ e i)))",
+  "module": "GroupTheory.FiniteAbelian.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "maximal_of_isField",
+  "informal": "If the quotient by an ideal is a field, then the ideal is maximal.",
+  "signature": "{R} [CommRing R] (I : Ideal R) (hqf : IsField (R \u29f8 I)) : I.IsMaximal",
+  "module": "RingTheory.Ideal.Quotient.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "filter_eq",
+  "informal": "After filtering out everything that does not equal a given value, at most that value remains. This is equivalent to `filter_eq'` with the equality the other way.",
+  "signature": "[DecidableEq \u03b2] (s : Finset \u03b2) (b : \u03b2) : s.filter (Eq b) = ite (b \u2208 s) {b} \u2205",
+  "module": "Data.Finset.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "set_induction",
+  "informal": "A subset of `\u2115` containing zero and closed under `Nat.succ` contains all of `\u2115`.",
+  "signature": "{S : Set \u2115} (hb : 0 \u2208 S) (h_ind : \u2200 k : \u2115, k \u2208 S \u2192 k + 1 \u2208 S) (n : \u2115) : n \u2208 S",
+  "module": "Data.Nat.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "surjective_of_surjective_of_injective_of_left_exact",
+  "informal": "A special case of one four lemma such that the left-most term is zero in terms of modules. For a diagram explaining the variables, see the module docstring.",
+  "signature": "(hi\u2082 : Function.Surjective i\u2082) (hi\u2083 : Function.Injective i\u2083) (hg\u2080 : Function.Injective g\u2081) : Function.Surjective i\u2081",
+  "module": "Algebra.FiveLemma",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "mul_eq_max",
+  "informal": "If `\u03b1` and `\u03b2` are infinite types, then the cardinality of `\u03b1 \u00d7 \u03b2` is the maximum of the cardinalities of `\u03b1` and `\u03b2`.",
+  "signature": "{a b : Cardinal} (ha : \u2135\u2080 \u2264 a) (hb : \u2135\u2080 \u2264 b) : a * b = max a b",
+  "module": "SetTheory.Cardinal.Arithmetic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "jacobiTheta\u2082_add_right",
+  "informal": "The two-variable Jacobi theta function is periodic in `\u03c4` with period 2.",
+  "signature": "(z \u03c4 : \u2102) : jacobiTheta\u2082 z (\u03c4 + 2) = jacobiTheta\u2082 z \u03c4",
+  "module": "NumberTheory.ModularForms.JacobiTheta.TwoVariable",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "count_factorMultiset",
+  "informal": "The number of occurrences of p in the factor multiset of m is the same as the p-adic valuation of m.",
+  "signature": "(m : \u2115+) (p : Nat.Primes) (k : \u2115) : (p : \u2115+) ^ k \u2223 m \u2194 k \u2264 m.factorMultiset.count p",
+  "module": "Data.PNat.Factors",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "count_modEq_card",
+  "informal": "There are `b / r + [v % r < b % r]` numbers in `[0, b)` congruent to `v` mod `r`, where `[\u00b7]` is the Iverson bracket.",
+  "signature": "(v : \u2115) : b.count (\u00b7 \u2261 v [MOD r]) = b / r + if v % r < b % r then 1 else 0",
+  "module": "Data.Int.CardIntervalMod",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "Finset.card_filter_length_eq_le",
+  "informal": "The number of strings of length `s` in any finite set is at most `D^s`.",
+  "signature": "[Fintype \u03b1] {T : Finset (List \u03b1)} {s : \u2115} : (T.filter (fun x => x.length = s)).card \u2264 (Fintype.card \u03b1) ^ s",
+  "module": "Data.Fintype.BigOperators",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "map_cast",
+  "informal": "Casting out of `SignType` respects composition with suitable bundled homomorphism types.",
+  "signature": "{\u03b1 \u03b2 F : Type*} [AddGroupWithOne \u03b1] [One \u03b2] [SubtractionMonoid \u03b2] [FunLike F \u03b1 \u03b2] [AddMonoidHomClass F \u03b1 \u03b2] [OneHomClass F \u03b1 \u03b2] (f : F) (s : SignType) : f s = s",
+  "module": "Data.Sign.Defs",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "iInf_nonneg",
+  "informal": "As `\u2a05 i, f i = 0` when the domain of the real-valued function `f` is empty, it suffices to show that all values of `f` are nonnegative to show that `0 \u2264 \u2a05 i, f i`.",
+  "signature": "(hf : \u2200 i, 0 \u2264 f i) : 0 \u2264 iInf f",
+  "module": "Algebra.Order.Archimedean.Real.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "card_toMultiset",
+  "informal": "Mapping an unordered pair to an unordered list produces a multiset of size `2`.",
+  "signature": "{\u03b1 : Type*} (z : Sym2 \u03b1) : z.toMultiset.card = 2",
+  "module": "Data.Sym.Sym2",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "real_sqrt_le_nat_sqrt_succ",
+  "informal": "The real square root is at most the natural square root plus one",
+  "signature": "{a : \u2115} : \u221a(a : \u211d) \u2264 Nat.sqrt a + 1",
+  "module": "Analysis.Real.Sqrt",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "IsAddTorsionFree.of_module_rat",
+  "informal": "A `\u211a\u22650`-module is torsion-free as a group. This instance will fire for any monoid `M`, so is local unless needed elsewhere.",
+  "signature": "[AddCommGroup M] [Module \u211a M] : IsAddTorsionFree M where nsmul_right_injective n hn x y hxy",
+  "module": "Algebra.Module.Rat",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "is_pell_solution_iff_mem_unitary",
+  "informal": "An element of `\u2124\u221ad` has norm one (i.e., `a.re^2 - d*a.im^2 = 1`) if and only if it is contained in the submonoid of unitary elements. TODO: merge this result with `Pell.isPell_iff_mem_unitary`.",
+  "signature": "{d : \u2124} {a : \u2124\u221ad} : a.re ^ 2 - d * a.im ^ 2 = 1 \u2194 a \u2208 unitary (\u2124\u221ad)",
+  "module": "NumberTheory.Pell",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "completedRiemannZeta\u2080_one_sub",
+  "informal": "Riemann zeta functional equation, formulated for `\u039b\u2080`: for any complex `s` we have `\u039b\u2080(1 - s) = \u039b\u2080 s`.",
+  "signature": "(s : \u2102) : completedRiemannZeta\u2080 (1 - s) = completedRiemannZeta\u2080 s",
+  "module": "NumberTheory.LSeries.RiemannZeta",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "cons_eq_imp",
+  "informal": "Generic step of the injectivity argument, pops the head of the pairs. Used in the recursive steps where we need to supply an additional injectivity argument.",
+  "signature": "{p : Prop} {a b a' b' : \u2115} (h : a = a' \u2192 b = b' \u2192 p) : Nat.pair a b = Nat.pair a' b' \u2192 p",
+  "module": "Tactic.DeriveCountable",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "sSup_nonneg'",
+  "informal": "As `sSup s = 0` when `s` is a set of reals that's unbounded above, it suffices to show that `s` contains a nonnegative element to show that `0 \u2264 sSup s`.",
+  "signature": "(hs : \u2203 x \u2208 s, 0 \u2264 x) : 0 \u2264 sSup s",
+  "module": "Algebra.Order.Archimedean.Real.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "inf_eq_inf_and_sup_eq_sup",
+  "informal": "In a linear order, two symmetric squares are equal if and only if they have the same infimum and supremum.",
+  "signature": "[LinearOrder \u03b1] {s t : Sym2 \u03b1} : s.inf = t.inf \u2227 s.sup = t.sup \u2194 s = t",
+  "module": "Data.Sym.Sym2.Order",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "commute_iff",
+  "informal": "Self-adjoint elements commute if and only if their product is self-adjoint.",
+  "signature": "{R : Type*} [Mul R] [StarMul R] {x y : R} (hx : IsSelfAdjoint x) (hy : IsSelfAdjoint y) : Commute x y \u2194 IsSelfAdjoint (x * y)",
+  "module": "Algebra.Star.SelfAdjoint",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "cancel_left_of_coprime",
+  "informal": "A common factor that's coprime with the modulus can be cancelled from a `ModEq`",
+  "signature": "(hmc : gcd m c = 1) (h : c * a \u2261 c * b [MOD m]) : a \u2261 b [MOD m]",
+  "module": "Data.Nat.ModEq",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "mahlerMeasure_le_sqrt_sum_sq_norm_coeff",
+  "informal": "**Landau's inequality**: the Mahler measure of a polynomial is at most the \u2113\u00b2 norm of its coefficient vector, `\u221a(\u2211 \u2016coeff i\u2016\u00b2)`. This is the classical inequality due to Landau (1905). Combined with the multiplicativity of the Mahler measure (`mahlerMeasure_mul`), it gives the Mignotte bound on coefficients of polynomial factors. TODO: restate using a dedicated polynomial \u2113\u00b2 norm once one is defined (see the TODO in `Mathlib.Analysis.Polynomial.Norm`).",
+  "signature": "(p : Polynomial \u2102) : p.mahlerMeasure \u2264 \u221a(\u2211 i \u2208 p.support, \u2016p.coeff i\u2016 ^ 2)",
+  "module": "Analysis.Polynomial.MahlerMeasure",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "IsAlgClosed.of_denseRange",
+  "informal": "If `K` is an algebraically closed dense subfield of a complete nonarchimedean normed field `L` of characteristic zero, then `L` is also algebraically closed.",
+  "signature": "{K L : Type*} [Field K] [NontriviallyNormedField L] [CompleteSpace L] [CharZero L] [IsUltrametricDist L] [Algebra K L] (hi : DenseRange (algebraMap K L)) [IsAlgClosed K] : IsAlgClosed L",
+  "module": "Analysis.Normed.Field.Dense",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "monomial_has_deriv_aux",
+  "informal": "Helper lemma for calculating the derivative of the monomial that appears in Taylor expansions.",
+  "signature": "(t x : \u211d) (n : \u2115) : HasDerivAt (fun y => (x - y) ^ (n + 1)) (-(n + 1) * (x - t) ^ n) t",
+  "module": "Analysis.Calculus.Taylor",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "cancel_left_div_gcd",
+  "informal": "To cancel a common factor `c` from a `ModEq` we must divide the modulus `m` by `gcd m c`.",
+  "signature": "(hm : 0 < m) (h : c * a \u2261 c * b [ZMOD m]) : a \u2261 b [ZMOD m / gcd m c]",
+  "module": "Data.Int.ModEq",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "WellFoundedLT.antitone_chain_condition",
+  "informal": "The **antitone chain** condition: an antitone sequence in a partially-ordered type with well-founded `<` is eventually constant. This is the dual of `WellFoundedGT.monotone_chain_condition`. It is provided for convenience, since it unbundles the antitone property from the order homomorphism.",
+  "signature": "[PartialOrder \u03b1] [WellFoundedLT \u03b1] {f : \u2115 \u2192 \u03b1} (hf : Antitone f) : \u2203 n, \u2200 m, n \u2264 m \u2192 f n = f m",
+  "module": "Order.OrderIsoNat",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "rpow_add_le_mul_rpow_add_rpow",
+  "informal": "Unweighted mean inequality, version for two elements of `\u211d\u22650` and real exponents.",
+  "signature": "(z\u2081 z\u2082 : \u211d\u22650) {p : \u211d} (hp : 1 \u2264 p) : (z\u2081 + z\u2082) ^ p \u2264 (2 : \u211d\u22650) ^ (p - 1) * (z\u2081 ^ p + z\u2082 ^ p)",
+  "module": "Analysis.MeanInequalitiesPow",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "CuspForm.isCuspForm_toModularForm\u2097",
+  "informal": "The underlying modular form (via `toModularForm\u2097`) of a `CuspForm` is itself a cusp form.",
+  "signature": "{\u0393 : Subgroup (GL (Fin 2) \u211d)} [\u0393.HasDetOne] (f : CuspForm \u0393 k) : ModularForm.IsCuspForm f.toModularForm\u2097",
+  "module": "NumberTheory.ModularForms.CuspFormSubmodule",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "le_sqrt",
+  "informal": "Note: if you want to conclude `x \u2264 \u221ay`, then use `Real.le_sqrt_of_sq_le`. If you have `x > 0`, consider using `Real.le_sqrt'`",
+  "signature": "(hx : 0 \u2264 x) (hy : 0 \u2264 y) : x \u2264 \u221ay \u2194 x ^ 2 \u2264 y",
+  "module": "Analysis.Real.Sqrt",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "cancel_of_lt",
+  "informal": "This lemma has an abbreviated name because it is used frequently.",
+  "signature": "{a : \u211d\u22650\u221e} (h : a < \u221e) : AddLECancellable a",
+  "module": "Data.ENNReal.Operations",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "cancel_of_ne",
+  "informal": "This lemma has an abbreviated name because it is used frequently.",
+  "signature": "{a : \u211d\u22650\u221e} (h : a \u2260 \u221e) : AddLECancellable a",
+  "module": "Data.ENNReal.Operations",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "ae_differentiableWithinAt_of_mem_pi",
+  "informal": "A bounded variation function into a finite-dimensional product vector space is differentiable almost everywhere. Superseded by `ae_differentiableWithinAt_of_mem`.",
+  "signature": "{\u03b9 : Type*} [Fintype \u03b9] {f : \u211d \u2192 \u03b9 \u2192 \u211d} {s : Set \u211d} (h : LocallyBoundedVariationOn f s) : \u2200\u1d50 x, x \u2208 s \u2192 DifferentiableWithinAt \u211d f s x",
+  "module": "Analysis.BoundedVariation",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "one_div_le_one_div_of_neg",
+  "informal": "For the single implications with fewer assumptions, see `one_div_lt_one_div_of_neg_of_lt` and `lt_of_one_div_lt_one_div`",
+  "signature": "(ha : a < 0) (hb : b < 0) : 1 / a \u2264 1 / b \u2194 b \u2264 a",
+  "module": "Algebra.Order.Field.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "sin_gt_sub_cube",
+  "informal": "For 0 < x we have x - x ^ 3 / 6 < sin x. This inequality is tight, in that the constant 6 is best possible.",
+  "signature": "{x : \u211d} (hx : 0 < x) : x - x ^ 3 / 6 < Real.sin x",
+  "module": "Analysis.SpecialFunctions.Trigonometric.Bounds",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "hasDerivAt_ofReal_cpow_const'",
+  "informal": "Although `fun x => x ^ r` for fixed `r` is *not* complex-differentiable along the negative real line, it is still real-differentiable, and the derivative is what one would formally expect. See `hasDerivAt_ofReal_cpow_const` for an alternate formulation.",
+  "signature": "{x : \u211d} (hx : x \u2260 0) {r : \u2102} (hr : r \u2260 -1) : HasDerivAt (fun y : \u211d => (y : \u2102) ^ (r + 1) / (r + 1)) (x ^ r) x",
+  "module": "Analysis.SpecialFunctions.Pow.Deriv",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "sSup_nonneg",
+  "informal": "As `sSup s = 0` when `s` is a set of reals that's either empty or unbounded above, it suffices to show that all elements of `s` are nonnegative to show that `0 \u2264 sSup s`.",
+  "signature": "(hs : \u2200 x \u2208 s, 0 \u2264 x) : 0 \u2264 sSup s",
+  "module": "Algebra.Order.Archimedean.Real.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "prod_sup_edist_ne_top_aux",
+  "informal": "An auxiliary lemma used twice in the proof of `WithLp.prodPseudoMetricAux` below. Not intended for use outside this file.",
+  "signature": "[PseudoMetricSpace \u03b1] [PseudoMetricSpace \u03b2] (f g : WithLp \u221e (\u03b1 \u00d7 \u03b2)) : edist f.fst g.fst \u2294 edist f.snd g.snd \u2260 \u22a4",
+  "module": "Analysis.Normed.Lp.ProdLp",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "ContinuousOn.mono_rng",
+  "informal": "If a function is continuous on a set for some topologies, then it is continuous on the same set with respect to any coarser topology on the target space.",
+  "signature": "{\u03b1 \u03b2 : Type*} {t\u2081 : TopologicalSpace \u03b1} {t\u2082 t\u2083 : TopologicalSpace \u03b2} (h\u2081 : t\u2082 \u2264 t\u2083) {s : Set \u03b1} {f : \u03b1 \u2192 \u03b2} (h\u2082 : @ContinuousOn \u03b1 \u03b2 t\u2081 t\u2082 f s) : @ContinuousOn \u03b1 \u03b2 t\u2081 t\u2083 f s",
+  "module": "Topology.ContinuousOn",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "denseRange_zsmul_iff",
+  "informal": "The multiples of a number `a` are dense on a circle of length `p > 0` iff `a` has infinite additive order.",
+  "signature": "{p : \u211d} [Fact (0 < p)] {a : AddCircle p} : DenseRange (\u00b7 \u2022 a : \u2124 \u2192 AddCircle p) \u2194 addOrderOf a = 0",
+  "module": "Topology.Instances.AddCircle.DenseSubgroup",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "charP_of_injective_algebraMap",
+  "informal": "If the algebra map `R \u2192+* A` is injective then `A` has the same characteristic as `R`.",
+  "signature": "[CommSemiring R] [Semiring A] [Algebra R A] (h : Function.Injective (algebraMap R A)) (p : \u2115) [CharP R p] : CharP A p",
+  "module": "Algebra.CharP.Algebra",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "ringHom_eq_ofReal_of_continuous",
+  "informal": "The only continuous ring homomorphism from `\u211d` to `\u2102` is the identity.",
+  "signature": "{f : \u211d \u2192+* \u2102} (h : Continuous f) : f = ofRealHom",
+  "module": "Analysis.Complex.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "add_eq_max",
+  "informal": "If `\u03b1` is an infinite type, then the cardinality of `\u03b1 \u2295 \u03b2` is the maximum of the cardinalities of `\u03b1` and `\u03b2`.",
+  "signature": "{a b : Cardinal} (ha : \u2135\u2080 \u2264 a) : a + b = max a b",
+  "module": "SetTheory.Cardinal.Arithmetic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "jacobiTheta\u2082_add_left",
+  "informal": "The two-variable Jacobi theta function is periodic in `z` with period 1.",
+  "signature": "(z \u03c4 : \u2102) : jacobiTheta\u2082 (z + 1) \u03c4 = jacobiTheta\u2082 z \u03c4",
+  "module": "NumberTheory.ModularForms.JacobiTheta.TwoVariable",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "exists_least_of_bdd",
+  "informal": "If `P : \u2124 \u2192 Prop` is a predicate such that the set `{m : P m}` is bounded below and nonempty, then this set has the least element. This lemma uses classical logic to avoid assumption `[DecidablePred P]`. See `Int.leastOfBdd` for a constructive counterpart.",
+  "signature": "{P : \u2124 \u2192 Prop} (Hbdd : \u2203 b : \u2124, \u2200 z : \u2124, P z \u2192 b \u2264 z) (Hinh : \u2203 z : \u2124, P z) : \u2203 lb : \u2124, P lb \u2227 \u2200 z : \u2124, P z \u2192 lb \u2264 z",
+  "module": "Data.Int.LeastGreatest",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "MonotoneOn.ae_differentiableWithinAt_of_mem",
+  "informal": "A real function which is monotone on a set is differentiable Lebesgue-almost everywhere on this set. This version does not assume that `s` is measurable. For a formulation with `volume.restrict s` assuming that `s` is measurable, see `MonotoneOn.ae_differentiableWithinAt`.",
+  "signature": "{f : \u211d \u2192 \u211d} {s : Set \u211d} (hf : MonotoneOn f s) : \u2200\u1d50 x, x \u2208 s \u2192 DifferentiableWithinAt \u211d f s x",
+  "module": "Analysis.Calculus.Monotone",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "IsAtomic.of_isChain_bounded",
+  "informal": "**Zorn's lemma**: A partial order is atomic if every nonempty chain `c`, `\u22a5 \u2209 c`, has a lower bound not equal to `\u22a5`.",
+  "signature": "{\u03b1 : Type*} [PartialOrder \u03b1] [OrderBot \u03b1] (h : \u2200 c : Set \u03b1, IsChain (\u00b7 \u2264 \u00b7) c \u2192 c.Nonempty \u2192 \u22a5 \u2209 c \u2192 \u2203 x \u2260 \u22a5, x \u2208 lowerBounds c) : IsAtomic \u03b1",
+  "module": "Order.ZornAtoms",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "of_mul_right",
+  "informal": "Cancel right multiplication in the modulus. For cancelling right multiplication on both sides of the `\u2261`, see `nat.modeq.mul_right_cancel'`.",
+  "signature": "(m : \u2115) : a \u2261 b [MOD n * m] \u2192 a \u2261 b [MOD n]",
+  "module": "Data.Nat.ModEq",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "nnnorm_sub_mul_self_le",
+  "informal": "This is a common reasoning sequence in C\u22c6-algebra theory. If `0 \u2264 x \u2264 y \u2264 1`, then the norm of `z - y * z` is controlled by the norm of `star z * (1 - x) * z`, which is advantageous because the latter is nonnegative. This is a key step in establishing the existence of an increasing approximate unit in general C\u22c6-algebras.",
+  "signature": "{A : Type*} [CStarAlgebra A] [PartialOrder A] [StarOrderedRing A] {x y : A} (z : A) (hx\u2080 : 0 \u2264 x) (hy : y \u2208 Set.Icc x 1) {c : \u211d\u22650} (h : \u2016star z * (1 - x) * z\u2016\u208a \u2264 c ^ 2) : \u2016z - y * z\u2016\u208a \u2264 c",
+  "module": "Analysis.CStarAlgebra.ApproximateUnit",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "triangle_ineq",
+  "informal": "The `p`-adic norm respects the triangle inequality: the norm of `p + q` is at most the norm of `p` plus the norm of `q`.",
+  "signature": "(q r : \u211a) : padicNorm p (q + r) \u2264 padicNorm p q + padicNorm p r",
+  "module": "NumberTheory.Padics.PadicNorm",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "infinite_rat_abs_sub_lt_one_div_den_sq_of_irrational",
+  "informal": "If `\u03be` is an irrational real number, then there are infinitely many good rational approximations to `\u03be`.",
+  "signature": "{\u03be : \u211d} (h\u03be : Irrational \u03be) : {q : \u211a | |\u03be - q| < 1 / (q.den : \u211d) ^ 2}.Infinite",
+  "module": "NumberTheory.DiophantineApproximation.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "bddAbove_range_mul",
+  "informal": "If `u v : \u03b1 \u2192 \u03b2` are nonnegative and bounded above, then `u * v` is bounded above.",
+  "signature": "{\u03b1 \u03b2 : Type*} [Nonempty \u03b1] {u v : \u03b1 \u2192 \u03b2} [Preorder \u03b2] [Zero \u03b2] [Mul \u03b2] [PosMulMono \u03b2] [MulPosMono \u03b2] (hu : BddAbove (Set.range u)) (hu0 : 0 \u2264 u) (hv : BddAbove (Set.range v)) (hv0 : 0 \u2264 v) : BddAbove (Set.range (u * v))",
+  "module": "Algebra.Order.GroupWithZero.Bounds",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "isCompactSystem_isCompact_isClosed",
+  "informal": "The set of compact and closed sets is a compact system.",
+  "signature": "(\u03b1 : Type*) [TopologicalSpace \u03b1] : IsCompactSystem {s : Set \u03b1 | IsCompact s \u2227 IsClosed s}",
+  "module": "Topology.Compactness.CompactSystem",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "schnirelmannDensity_setOfPred_mod_eq_one",
+  "informal": "The Schnirelmann density of the set of naturals which are `1 mod m` is `m\u207b\u00b9`, for any `m \u2260 1`. Note that if `m = 1`, this set is empty.",
+  "signature": "{m : \u2115} (hm : m \u2260 1) : schnirelmannDensity {n | n % m = 1} = (m\u207b\u00b9 : \u211d)",
+  "module": "Combinatorics.Schnirelmann",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "add_le_add_iff_right'",
+  "informal": "Addition in `WithBot (WithTop \u03b1)` is right cancellative provided the element being cancelled is not `\u22a4` or `\u22a5`.",
+  "signature": "{\u03b1 : Type*} [Add \u03b1] [LE \u03b1] [AddRightMono \u03b1] [AddRightReflectLE \u03b1] {a b c : WithBot (WithTop \u03b1)} (hc : c \u2260 \u22a5) (hc' : c \u2260 \u22a4) : a + c \u2264 b + c \u2194 a \u2264 b",
+  "module": "Algebra.Order.Monoid.Unbundled.WithTop",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "cancel_coe",
+  "informal": "This lemma has an abbreviated name because it is used frequently.",
+  "signature": "{a : \u211d\u22650} : AddLECancellable (a : \u211d\u22650\u221e)",
+  "module": "Data.ENNReal.Operations",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "Real.infinite_rat_abs_sub_lt_one_div_den_sq_iff_irrational",
+  "informal": "The set of good rational approximations to a real number `\u03be` is infinite if and only if `\u03be` is irrational.",
+  "signature": "(\u03be : \u211d) : {q : \u211a | |\u03be - q| < 1 / (q.den : \u211d) ^ 2}.Infinite \u2194 Irrational \u03be",
+  "module": "NumberTheory.DiophantineApproximation.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "algebraRat.charZero",
+  "informal": "A nontrivial `\u211a`-algebra has characteristic zero. This cannot be a (local) instance because it would immediately form a loop with the instance `DivisionRing.toRatAlgebra`. It's probably easier to go the other way: prove `CharZero R` and automatically receive an `Algebra \u211a R` instance.",
+  "signature": "[Ring R] [Algebra \u211a R] : CharZero R",
+  "module": "Algebra.CharP.Algebra",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "apply_add_index_le_apply_add_index_int",
+  "informal": "In \u2124, two entries in an `LTSeries` differ by at least the difference of their indices. (Expressed in a way that avoids subtraction).",
+  "signature": "(p : LTSeries \u2124) (i j : Fin (p.length + 1)) (hij : i \u2264 j) : p i + j \u2264 p j + i",
+  "module": "Order.RelSeries",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "MonotoneOn.convexOn_of_deriv",
+  "informal": "If a function `f` is continuous on a convex set `D \u2286 \u211d`, is differentiable on its interior, and `f'` is monotone on the interior, then `f` is convex on `D`.",
+  "signature": "{D : Set \u211d} (hD : Convex \u211d D) {f : \u211d \u2192 \u211d} (hf : ContinuousOn f D) (hf' : DifferentiableOn \u211d f (interior D)) (hf'_mono : MonotoneOn (deriv f) (interior D)) : ConvexOn \u211d D f",
+  "module": "Analysis.Convex.Deriv",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "sum_subgroup_units_eq_zero",
+  "informal": "The sum of a nontrivial subgroup of the units of a field is zero.",
+  "signature": "[Ring K] [NoZeroDivisors K] {G : Subgroup K\u02e3} [Fintype G] (hg : G \u2260 \u22a5) : \u2211 x : G, (x.val : K) = 0",
+  "module": "FieldTheory.Finite.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "ZMod.isSquare_neg_one_mul",
+  "informal": "If `-1` is a square modulo coprime natural numbers `m` and `n`, then `-1` is also a square modulo `m*n`.",
+  "signature": "{m n : \u2115} (hc : m.Coprime n) (hm : IsSquare (-1 : ZMod m)) (hn : IsSquare (-1 : ZMod n)) : IsSquare (-1 : ZMod (m * n))",
+  "module": "NumberTheory.SumTwoSquares",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "xor_range",
+  "informal": "The xor of the numbers from 0 to n can be easily calculated using `n mod 4`.",
+  "signature": "(n : \u2115) : (List.range (n + 1)).foldl (\u00b7 ^^^ \u00b7) 0 = match Fin.ofNat 4 n with | 0 => n | 1 => 1 | 2 => n + 1 | 3 => 0",
+  "module": "Data.Nat.Bitwise",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "prime_dvd_char_iff_dvd_card",
+  "informal": "The prime divisors of the characteristic of a finite commutative ring are exactly the prime divisors of its cardinality.",
+  "signature": "{R : Type*} [CommRing R] [Fintype R] (p : \u2115) [Fact p.Prime] : p \u2223 ringChar R \u2194 p \u2223 Fintype.card R",
+  "module": "Algebra.CharP.CharAndCard",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "strictConvexOn_of_deriv2_pos",
+  "informal": "If a function `f` is continuous on a convex set `D \u2286 \u211d` and `f''` is strictly positive on the interior, then `f` is strictly convex on `D`. Note that we don't require twice differentiability explicitly as it is already implied by the second derivative being strictly positive, except at at most one point.",
+  "signature": "{D : Set \u211d} (hD : Convex \u211d D) {f : \u211d \u2192 \u211d} (hf : ContinuousOn f D) (hf'' : \u2200 x \u2208 interior D, 0 < (deriv^[2] f) x) : StrictConvexOn \u211d D f",
+  "module": "Analysis.Convex.Deriv",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "continuousAt_add",
+  "informal": "The addition on `EReal` is continuous except where it doesn't make sense (i.e., at `(\u22a5, \u22a4)` and at `(\u22a4, \u22a5)`).",
+  "signature": "{p : EReal \u00d7 EReal} (h : p.1 \u2260 \u22a4 \u2228 p.2 \u2260 \u22a5) (h' : p.1 \u2260 \u22a5 \u2228 p.2 \u2260 \u22a4) : ContinuousAt (fun p : EReal \u00d7 EReal => p.1 + p.2) p",
+  "module": "Topology.Instances.EReal.Lemmas",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "mul_mem_one_two_three_iff",
+  "informal": "This lemma justifies its existence from its utility in crystallographic root system theory.",
+  "signature": "{a b : \u2124} : a * b \u2208 ({1, 2, 3} : Set \u2124) \u2194 (a, b) \u2208 ({ (1, 1), (-1, -1), (1, 2), (2, 1), (-1, -2), (-2, -1), (1, 3), (3, 1), (-1, -3), (-3, -1)} : Set (\u2124 \u00d7 \u2124))",
+  "module": "NumberTheory.Divisors",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "_root_.exists_prime_orderOf_dvd_card",
+  "informal": "For every prime `p` dividing the order of a finite group `G` there exists an element of order `p` in `G`. This is known as Cauchy's theorem.",
+  "signature": "{G : Type*} [Group G] [Fintype G] (p : \u2115) [hp : Fact p.Prime] (hdvd : p \u2223 Fintype.card G) : \u2203 x : G, orderOf x = p",
+  "module": "GroupTheory.Perm.Cycle.Type",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "polynomialFunctions_closure_eq_top",
+  "informal": "The **Weierstrass Approximation Theorem**: polynomials functions on `[a, b] \u2286 \u211d` are dense in `C([a,b],\u211d)` (While we could deduce this as an application of the Stone-Weierstrass theorem, our proof of that relies on the fact that `abs` is in the closure of polynomials on `[-M, M]`, so we may as well get this done first.)",
+  "signature": "(a b : \u211d) : (polynomialFunctions (Set.Icc a b)).topologicalClosure = \u22a4",
+  "module": "Topology.ContinuousMap.Weierstrass",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "eq_unit_mul_divisor",
+  "informal": "Any element of `ZMod N` has the form `u * d` where `u` is a unit and `d` is a divisor of `N`.",
+  "signature": "{N : \u2115} (a : ZMod N) : \u2203 d : \u2115, d \u2223 N \u2227 \u2203 (u : ZMod N), IsUnit u \u2227 a = u * d",
+  "module": "Data.ZMod.Units",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "IsCyclic.monoidHom_equiv_self",
+  "informal": "The group of group homomorphisms from a finite cyclic group `G` of order `n` into the group of units of a ring `M` with all roots of unity is isomorphic to `G`",
+  "signature": "(G M : Type*) [CommGroup G] [Finite G] [IsCyclic G] [CommMonoid M] [HasEnoughRootsOfUnity M (Nat.card G)] : Nonempty ((G \u2192* M\u02e3) \u2243* G)",
+  "module": "RingTheory.RootsOfUnity.EnoughRootsOfUnity",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "NoZeroDivisors.toIsCancelMulZero",
+  "informal": "A ring with no zero divisors is a cancellative `MonoidWithZero`. Note this is not an instance as it forms a typeclass loop.",
+  "signature": "[NonUnitalNonAssocRing \u03b1] [NoZeroDivisors \u03b1] : IsCancelMulZero \u03b1 where mul_left_cancel_of_ne_zero ha",
+  "module": "Algebra.Ring.Regular",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "apply_add_index_le_apply_add_index_nat",
+  "informal": "In \u2115, two entries in an `LTSeries` differ by at least the difference of their indices. (Expressed in a way that avoids subtraction).",
+  "signature": "(p : LTSeries \u2115) (i j : Fin (p.length + 1)) (hij : i \u2264 j) : p i + j \u2264 p j + i",
+  "module": "Order.RelSeries",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "AddMonoidHom.continuous_of_measurable",
+  "informal": "A Borel-measurable group hom from a locally compact normed group to a real normed space is continuous.",
+  "signature": "{G H : Type*} [SeminormedAddCommGroup G] [MeasurableSpace G] [BorelSpace G] [LocallyCompactSpace G] [SeminormedAddCommGroup H] [MeasurableSpace H] [OpensMeasurableSpace H] [NormedSpace \u211d H] (f : G \u2192+ H) (hf : Measurable f) : Continuous f",
+  "module": "MeasureTheory.Measure.Haar.NormedSpace",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "LinearOrderedCommGroup.isCyclic_iff_nonempty_equiv_int",
+  "informal": "A linearly-ordered abelian group is cyclic iff it is isomorphic to `Multiplicative \u2124` as an ordered monoid.",
+  "signature": "{G : Type*} [CommGroup G] [LinearOrder G] [IsOrderedMonoid G] [Nontrivial G] : IsCyclic G \u2194 Nonempty (G \u2243*o Multiplicative \u2124)",
+  "module": "GroupTheory.SpecificGroups.Cyclic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "rat_mul_iff",
+  "informal": "The product `r * x`, `r : \u211a`, `r \u2260 0`, is a Liouville number with exponent `p` if and only if `x` satisfies the same condition.",
+  "signature": "(hr : r \u2260 0) : LiouvilleWith p (r * x) \u2194 LiouvilleWith p x",
+  "module": "NumberTheory.Transcendental.Liouville.LiouvilleWith",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "one_add_mul_self_le_rpow_one_add",
+  "informal": "**Bernoulli's inequality** for real exponents, non-strict version: for `1 \u2264 p` and `-1 \u2264 s` we have `1 + p * s \u2264 (1 + s) ^ p`.",
+  "signature": "{s : \u211d} (hs : -1 \u2264 s) {p : \u211d} (hp : 1 \u2264 p) : 1 + p * s \u2264 (1 + s) ^ p",
+  "module": "Analysis.Convex.SpecificFunctions.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "isOpen_re_gt",
+  "informal": "An open right half-plane is an open set in the complex plane.",
+  "signature": "(x : \u211d) : IsOpen {z : \u2102 | x < z.re}",
+  "module": "Analysis.Complex.HalfPlane",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "Basis.card_le_card_of_linearIndependent_aux",
+  "informal": "Let `R` satisfy the strong rank condition. If `m` elements of a free rank `n` `R`-module are linearly independent, then `m \u2264 n`.",
+  "signature": "{R : Type*} [Semiring R] [StrongRankCondition R] (n : \u2115) {m : \u2115} (v : Fin m \u2192 Fin n \u2192 R) : LinearIndependent R v \u2192 m \u2264 n",
+  "module": "LinearAlgebra.Dimension.StrongRankCondition",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "lex_desc",
+  "informal": "If we swap two strictly decreasing values in a function, then the result is lexicographically smaller than the original function.",
+  "signature": "{\u03b1} [Preorder \u03b9] [DecidableEq \u03b9] [LT \u03b1] {f : \u03b9 \u2192 \u03b1} {i j : \u03b9} (h\u2081 : i \u2264 j) (h\u2082 : f j < f i) : toLex (f \u2218 Equiv.swap i j) < toLex f",
+  "module": "Order.PiLex",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "subsingleton_floorSemiring",
+  "informal": "There exists at most one `FloorSemiring` structure on a linear ordered semiring.",
+  "signature": "{R} [Semiring R] [LinearOrder R] : Subsingleton (FloorSemiring R)",
+  "module": "Algebra.Order.Floor.Semiring",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "pos_iff_ne_zero'",
+  "informal": "The `Fin.pos_iff_ne_zero` in `Lean` only applies in `Fin (n+1)`. This one instead uses a `NeZero n` typeclass hypothesis.",
+  "signature": "[NeZero n] (a : Fin n) : 0 < a \u2194 a \u2260 0",
+  "module": "Data.Fin.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "toDigits_length",
+  "informal": "The core implementation of `Nat.toDigits` returns a String with length less than or equal to the number of digits in the base-`b` number (represented by `e`). For example, the string representation of any number less than `b ^ 3` has a length less than or equal to 3.",
+  "signature": "(b n e : Nat) : 0 < e \u2192 n < b ^ e \u2192 (Nat.toDigits b n).length \u2264 e",
+  "module": "Data.Nat.Digits.Defs",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "LinearOrderedAddCommGroup.isAddCyclic_iff_not_denselyOrdered",
+  "informal": "Any non-trivial linearly ordered archimedean additive group is either cyclic, or densely ordered, exclusively.",
+  "signature": "{A : Type*} [AddCommGroup A] [LinearOrder A] [IsOrderedAddMonoid A] [Archimedean A] [Nontrivial A] : IsAddCyclic A \u2194 \u00ac DenselyOrdered A",
+  "module": "GroupTheory.ArchimedeanDensely",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "Acc.list_chain'",
+  "informal": "If an `r`-decreasing chain `l` is empty or its head is accessible by `r`, then `l` is accessible by the lexicographic order `List.Lex r`.",
+  "signature": "{l : List.chains r} (acc : \u2200 a \u2208 l.val.head?, Acc r a) : Acc (List.lex_chains r) l",
+  "module": "Data.List.Chain",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "Ideal.mem_span_pow_iff_exists_isHomogeneous",
+  "informal": "Try to use the universal property of the span (e.g., `Submodule.span_induction`) instead of this.",
+  "signature": "{\u03b9 R : Type*} [CommSemiring R] {n : \u2115} (x : \u03b9 \u2192 R) (y : R) : y \u2208 (Ideal.span <| Set.range x) ^ n \u2194 \u2203 (p : MvPolynomial \u03b9 R), p.IsHomogeneous n \u2227 p.eval x = y",
+  "module": "RingTheory.MvPolynomial.Homogeneous",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "wellFoundedGT_iff_monotone_chain_condition'",
+  "informal": "The **monotone chain condition**: a preorder is co-well-founded iff every increasing sequence contains two non-increasing indices. See `wellFoundedGT_iff_monotone_chain_condition` for a stronger version on partial orders.",
+  "signature": "[Preorder \u03b1] : WellFoundedGT \u03b1 \u2194 \u2200 a : \u2115 \u2192o \u03b1, \u2203 n, \u2200 m, n \u2264 m \u2192 \u00aca n < a m",
+  "module": "Order.OrderIsoNat",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "subsingleton_floorRing",
+  "informal": "There exists at most one `FloorRing` structure on a given linear ordered ring.",
+  "signature": "{R} [Ring R] [LinearOrder R] : Subsingleton (FloorRing R)",
+  "module": "Algebra.Order.Floor.Ring",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "isometry_iff_dist_eq",
+  "informal": "On pseudometric spaces, a map is an isometry if and only if it preserves distances.",
+  "signature": "[PseudoMetricSpace \u03b1] [PseudoMetricSpace \u03b2] {f : \u03b1 \u2192 \u03b2} : Isometry f \u2194 \u2200 x y, dist (f x) (f y) = dist x y",
+  "module": "Topology.MetricSpace.Isometry",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "smoothNumbers_succ",
+  "informal": "The sets of `N`-smooth and of `(N+1)`-smooth numbers are the same when `N` is not prime. See `Nat.equivProdNatSmoothNumbers` for when `N` is prime.",
+  "signature": "{N : \u2115} (hN : \u00ac N.Prime) : (N + 1).smoothNumbers = N.smoothNumbers",
+  "module": "NumberTheory.SmoothNumbers",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "ite",
+  "informal": "The computable functions are closed under if-then-else definitions with computable predicates.",
+  "signature": "{f\u2081 f\u2082 : \u2115 \u2192 \u2115} (hf\u2081 : Computable f\u2081) (hf\u2082 : Computable f\u2082) {c : \u2115 \u2192 Prop} [DecidablePred c] (hc : ComputablePred c) : Computable fun k \u21a6 if c k then f\u2081 k else f\u2082 k",
+  "module": "Computability.RE",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "infinite_setOfPred_prime_modEq_one",
+  "informal": "For any positive `k : \u2115` there are infinitely many primes `p` such that `p \u2261 1 [MOD k]`.",
+  "signature": "{k : \u2115} (hk0 : k \u2260 0) : Set.Infinite {p : \u2115 | Nat.Prime p \u2227 p \u2261 1 [MOD k]}",
+  "module": "NumberTheory.PrimesCongruentOne",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "exists_greatest_of_bdd",
+  "informal": "If `P : \u2124 \u2192 Prop` is a predicate such that the set `{m : P m}` is bounded above and nonempty, then this set has the greatest element. This lemma uses classical logic to avoid assumption `[DecidablePred P]`. See `Int.greatestOfBdd` for a constructive counterpart.",
+  "signature": "{P : \u2124 \u2192 Prop} (Hbdd : \u2203 b : \u2124, \u2200 z : \u2124, P z \u2192 z \u2264 b) (Hinh : \u2203 z : \u2124, P z) : \u2203 ub : \u2124, P ub \u2227 \u2200 z : \u2124, P z \u2192 z \u2264 ub",
+  "module": "Data.Int.LeastGreatest",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "Subfield.bot_eq_of_zMod_algebra",
+  "informal": "The smallest subfield of a field of characteristic `p` is (the image of) `ZMod p`. Note that the fact that the field `K` is of characteristic `p` is stated by the fact that it is `ZMod p`-algebra.",
+  "signature": "{K : Type*} (p : \u2115) [hp : Fact (Nat.Prime p)] [Field K] [Algebra (ZMod p) K] : (\u22a5 : Subfield K) = (algebraMap (ZMod p) K).fieldRange",
+  "module": "FieldTheory.PrimeField",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "secondCountableTopology_induced",
+  "informal": "If `\u03b2` is a second-countable space, then its induced topology via `f` on `\u03b1` is also second-countable.",
+  "signature": "(\u03b1 \u03b2) [t : TopologicalSpace \u03b2] [SecondCountableTopology \u03b2] (f : \u03b1 \u2192 \u03b2) : @SecondCountableTopology \u03b1 (t.induced f)",
+  "module": "Topology.Bases",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "threeAPFree_frontier",
+  "informal": "The frontier of a closed strictly convex set only contains trivial arithmetic progressions. The idea is that an arithmetic progression is contained on a line and the frontier of a strictly convex set does not contain lines.",
+  "signature": "{\ud835\udd5c E : Type*} [Field \ud835\udd5c] [LinearOrder \ud835\udd5c] [IsStrictOrderedRing \ud835\udd5c] [TopologicalSpace E] [AddCommMonoid E] [Module \ud835\udd5c E] {s : Set E} (hs\u2080 : IsClosed s) (hs\u2081 : StrictConvex \ud835\udd5c s) : ThreeAPFree (frontier s)",
+  "module": "Combinatorics.Additive.AP.Three.Behrend",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "_root_.finCongr_eq_equivCast",
+  "informal": "While in many cases `finCongr` is better than `Equiv.cast`/`cast`, sometimes we want to apply a generic theorem about `cast`.",
+  "signature": "(h : n = m) : finCongr h = .cast (h \u25b8 rfl)",
+  "module": "Data.Fin.SuccPred",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "toDigitsCore_length",
+  "informal": "The String representation produced by toDigitsCore has the proper length relative to the number of digits in `n < e` for some base `b`. Since this works with any base, it can be used for binary, decimal, and hex.",
+  "signature": "(b f n e : Nat) (h_e_pos : 0 < e) (hlt : n < b ^ e) : (Nat.toDigitsCore b f n []).length \u2264 e",
+  "module": "Data.Nat.Digits.Defs",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "sq_add_sq_mul",
+  "informal": "The set of sums of two squares is closed under multiplication in any commutative ring. See also `sq_add_sq_mul_sq_add_sq`.",
+  "signature": "{R} [CommRing R] {a b x y u v : R} (ha : a = x ^ 2 + y ^ 2) (hb : b = u ^ 2 + v ^ 2) : \u2203 r s : R, a * b = r ^ 2 + s ^ 2",
+  "module": "NumberTheory.SumTwoSquares",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "Complex.deriv_log_comp_eq_logDeriv",
+  "informal": "The derivative of `log \u2218 f` is the logarithmic derivative provided `f` is differentiable and we are on the slitPlane.",
+  "signature": "{f : \u2102 \u2192 \u2102} {x : \u2102} (h\u2081 : DifferentiableAt \u2102 f x) (h\u2082 : f x \u2208 Complex.slitPlane) : deriv (Complex.log \u2218 f) x = logDeriv f x",
+  "module": "Analysis.SpecialFunctions.Complex.LogDeriv",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "IsSemitopologicalSemiring.toIsSemitopologicalRing",
+  "informal": "If `R` is a ring which is a semitopological semiring, then it is automatically a semitopological ring. This exists so that one can place a topological ring structure on `R` without explicitly proving `continuous_neg`.",
+  "signature": "[TopologicalSpace R] [NonAssocRing R] (_ : IsSemitopologicalSemiring R) : IsSemitopologicalRing R where toContinuousNeg",
+  "module": "Topology.Algebra.Ring.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "bijective_of_bijective_of_injective_of_left_exact",
+  "informal": "A special case of the five lemma in terms of modules. For a diagram explaining the variables, see the module docstring.",
+  "signature": "(hi\u2082 : Function.Bijective i\u2082) (hi\u2083 : Function.Injective i\u2083) (hf\u2080 : Function.Injective f\u2081) (hg\u2080 : Function.Injective g\u2081) : Function.Bijective i\u2081",
+  "module": "Algebra.FiveLemma",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "coprime_classification'",
+  "informal": "By assuming `x` is odd and `z` is positive we get a slightly more precise classification of the Pythagorean triple `x ^ 2 + y ^ 2 = z ^ 2`.",
+  "signature": "{x y z : \u2124} (h : PythagoreanTriple x y z) (h_coprime : Int.gcd x y = 1) (h_parity : x % 2 = 1) (h_pos : 0 < z) : \u2203 m n, x = m ^ 2 - n ^ 2 \u2227 y = 2 * m * n \u2227 z = m ^ 2 + n ^ 2 \u2227 Int.gcd m n = 1 \u2227 (m % 2 = 0 \u2227 n % 2 = 1 \u2228 m % 2 = 1 \u2227 n % 2 = 0) \u2227 0 \u2264 m",
+  "module": "NumberTheory.PythagoreanTriples",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "iteratedDerivWithin_nonneg",
+  "informal": "Under `UniqueDiffOn`, a Taylor witness for an absolutely monotone function agrees with `iteratedDerivWithin`, so the latter is nonnegative on `s`.",
+  "signature": "(hf : AbsolutelyMonotoneOn f s) (hs : UniqueDiffOn \u211d s) (n : \u2115) {x : \u211d} (hx : x \u2208 s) : 0 \u2264 iteratedDerivWithin n f s x",
+  "module": "Analysis.Calculus.AbsolutelyMonotone",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "rpow_one_add_lt_one_add_mul_self",
+  "informal": "**Bernoulli's inequality** for real exponents, strict version: for `0 < p < 1` and `-1 \u2264 s`, with `s \u2260 0`, we have `(1 + s) ^ p < 1 + p * s`.",
+  "signature": "{s : \u211d} (hs : -1 \u2264 s) (hs' : s \u2260 0) {p : \u211d} (hp1 : 0 < p) (hp2 : p < 1) : (1 + s) ^ p < 1 + p * s",
+  "module": "Analysis.Convex.SpecificFunctions.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "geomSum_lt_geomSum_iff_toColex_lt_toColex",
+  "informal": "For finsets of naturals, the colexicographic order is equivalent to the order induced by the `n`-ary expansion.",
+  "signature": "(hn : 2 \u2264 n) : \u2211 i \u2208 s, n ^ i < \u2211 i \u2208 t, n ^ i \u2194 toColex s < toColex t",
+  "module": "Combinatorics.Colex",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "support_top_of_nontrivial",
+  "informal": "All vertices are in the support of the complete graph if there is more than one vertex.",
+  "signature": "[Nontrivial V] : (\u22a4 : SimpleGraph V).support = Set.univ",
+  "module": "Combinatorics.SimpleGraph.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "nat_log_eq_padicValNat_iff",
+  "informal": "The p-adic valuation of `n` is equal to the logarithm w.r.t. `p` iff `n` is less than `p` raised to one plus the p-adic valuation of `n`.",
+  "signature": "{n : \u2115} [hp : Fact (Nat.Prime p)] (hn : n \u2260 0) : Nat.log p n = padicValNat p n \u2194 n < p ^ (padicValNat p n + 1)",
+  "module": "NumberTheory.Padics.PadicVal.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "div_linear_zpow_differentiableOn",
+  "informal": "Auxiliary lemma showing that for any `k : \u2124` the function `z \u2192 1/(c*z+d)^k` is differentiable on `{z : \u2102 | 0 < z.im}`.",
+  "signature": "(k : \u2124) (a : Fin 2 \u2192 \u2124) : DifferentiableOn \u2102 (fun z : \u2102 => (a 0 * z + a 1) ^ (-k)) {z : \u2102 | 0 < z.im}",
+  "module": "NumberTheory.ModularForms.EisensteinSeries.MDifferentiable",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "monotone_iff_forall_wcovBy",
+  "informal": "A function from a locally finite preorder is monotone if and only if it is monotone when restricted to pairs satisfying `a \u2a7f b`.",
+  "signature": "[Preorder \u03b1] [LocallyFiniteOrder \u03b1] [Preorder \u03b2] (f : \u03b1 \u2192 \u03b2) : Monotone f \u2194 \u2200 a b : \u03b1, a \u2a7f b \u2192 f a \u2264 f b",
+  "module": "Order.Interval.Finset.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "padicNorm_two_harmonic",
+  "informal": "The 2-adic norm of the n-th harmonic number is 2 raised to the logarithm of n in base 2.",
+  "signature": "{n : \u2115} (hn : n \u2260 0) : \u2016(harmonic n : \u211a_[2])\u2016 = 2 ^ (Nat.log 2 n)",
+  "module": "NumberTheory.Harmonic.Int",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "DiscreteTopology.preimage_of_continuous_injective",
+  "informal": "Let `s` be a discrete subset of a topological space. Then the preimage of `s` by a continuous injective map is also discrete.",
+  "signature": "{X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] (s : Set Y) [DiscreteTopology s] {f : X \u2192 Y} (hc : Continuous f) (hinj : Function.Injective f) : DiscreteTopology (f \u207b\u00b9' s)",
+  "module": "Topology.Constructions",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "dense_addSubgroup_iff_ne_zmultiples",
+  "informal": "A subgroup of the circle `\u211d\u29f8p\u2124`, `p > 0`, is dense iff it is not generated by a single element of finite additive order.",
+  "signature": "{p : \u211d} [Fact (0 < p)] {s : AddSubgroup (AddCircle p)} : Dense (s : Set (AddCircle p)) \u2194 \u2200 a, addOrderOf a \u2260 0 \u2192 s \u2260 .zmultiples a",
+  "module": "Topology.Instances.AddCircle.DenseSubgroup",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "le_of_surjective",
+  "informal": "If we have a surjective map from `Fin m` to `Fin n`, then `m \u2265 n`. See also `Fintype.card_le_of_surjective` for the generalisation to arbitrary finite types.",
+  "signature": "(f : Fin m \u2192 Fin n) (hf : Function.Surjective f) : n \u2264 m",
+  "module": "Data.Fin.Pigeonhole",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "Nat.geomSum_lt",
+  "informal": "If all the elements of a finset of naturals are less than `n`, then the sum of their powers of `m \u2265 2` is less than `m ^ n`.",
+  "signature": "(hm : 2 \u2264 m) (hs : \u2200 k \u2208 s, k < n) : \u2211 k \u2208 s, m ^ k < m ^ n",
+  "module": "Algebra.Order.Ring.GeomSum",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "comp",
+  "informal": "Composition of purely inseparable ring homomorphisms between fields is purely inseparable.",
+  "signature": "[Field F] [Field E] [Field K] {f : F \u2192+* E} {g : E \u2192+* K} (hf : f.IsPurelyInseparable) (hg : g.IsPurelyInseparable) : (g.comp f).IsPurelyInseparable",
+  "module": "RingTheory.RingHom.PurelyInseparable",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "exists_prime_gt_modEq_one",
+  "informal": "For any positive `k : \u2115` there exists an arbitrarily large prime `p` such that `p \u2261 1 [MOD k]`.",
+  "signature": "{k : \u2115} (n : \u2115) (hk0 : k \u2260 0) : \u2203 p : \u2115, Nat.Prime p \u2227 n < p \u2227 p \u2261 1 [MOD k]",
+  "module": "NumberTheory.PrimesCongruentOne",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "injective_of_surjective_of_injective_of_right_exact",
+  "informal": "A special case of one four lemma such that the right-most term is zero in terms of (additive) groups. For a diagram explaining the variables, see the module docstring.",
+  "signature": "(hi\u2081 : Function.Surjective i\u2081) (hi\u2082 : Function.Injective i\u2082) (hf\u2082 : Function.Surjective f\u2082) : Function.Injective i\u2083",
+  "module": "Algebra.FiveLemma",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "Finite.exists_infinite_fiber",
+  "informal": "The strong pigeonhole principle for infinitely many pigeons in finitely many pigeonholes. If there are infinitely many pigeons in finitely many pigeonholes, then there is a pigeonhole with infinitely many pigeons. See also: `Finite.exists_ne_map_eq_of_infinite`",
+  "signature": "[Infinite \u03b1] [Finite \u03b2] (f : \u03b1 \u2192 \u03b2) : \u2203 y : \u03b2, Infinite (f \u207b\u00b9' {y})",
+  "module": "Data.Fintype.Pigeonhole",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "exists_prime_lt_and_le_two_mul_eventually",
+  "informal": "Proves that **Bertrand's postulate** holds for all sufficiently large `n`.",
+  "signature": "(n : \u2115) (n_large : 512 \u2264 n) : \u2203 p : \u2115, p.Prime \u2227 n < p \u2227 p \u2264 2 * n",
+  "module": "NumberTheory.Bertrand",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "surjective_units_map_of_local_ringHom",
+  "informal": "If `f : R \u2192+* S` is a surjective local ring hom, then the induced units map is surjective.",
+  "signature": "[Semiring R] [Semiring S] (f : R \u2192+* S) (hf : Function.Surjective f) (h : IsLocalHom f) : Function.Surjective (Units.map <| f.toMonoidHom)",
+  "module": "RingTheory.LocalRing.RingHom.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "StrictMono.eq_id",
+  "informal": "A strictly monotone self-map of a finite linear order is the identity.",
+  "signature": "{\u03b1 : Type*} [LinearOrder \u03b1] [Finite \u03b1] {f : \u03b1 \u2192 \u03b1} (hf : StrictMono f) : f = id",
+  "module": "Order.Preorder.Finite",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "WellFounded.prod_gameAdd",
+  "informal": "The `Prod.GameAdd` relation on well-founded inputs is well-founded. In particular, the sum of two well-founded games is well-founded.",
+  "signature": "(h\u03b1 : WellFounded r\u03b1) (h\u03b2 : WellFounded r\u03b2) : WellFounded (Prod.GameAdd r\u03b1 r\u03b2)",
+  "module": "Order.GameAdd",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "isometry_iff_nndist_eq",
+  "informal": "On pseudometric spaces, a map is an isometry if and only if it preserves nonnegative distances.",
+  "signature": "[PseudoMetricSpace \u03b1] [PseudoMetricSpace \u03b2] {f : \u03b1 \u2192 \u03b2} : Isometry f \u2194 \u2200 x y, nndist (f x) (f y) = nndist x y",
+  "module": "Topology.MetricSpace.Isometry",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "one_div_le_one_div",
+  "informal": "For the single implications with fewer assumptions, see `one_div_le_one_div_of_le` and `le_of_one_div_le_one_div`",
+  "signature": "(ha : 0 < a) (hb : 0 < b) : 1 / a \u2264 1 / b \u2194 b \u2264 a",
+  "module": "Algebra.Order.Field.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "eq_iff_prime_padicValNat_eq",
+  "informal": "Two positive naturals are equal if their prime padic valuations are equal",
+  "signature": "(a b : \u2115) (ha : a \u2260 0) (hb : b \u2260 0) : a = b \u2194 \u2200 p : \u2115, p.Prime \u2192 padicValNat p a = padicValNat p b",
+  "module": "Data.Nat.Factorization.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "isOpen_im_gt",
+  "informal": "An open upper half-plane is an open set in the complex plane.",
+  "signature": "(x : \u211d) : IsOpen {z : \u2102 | x < z.im}",
+  "module": "Analysis.Complex.HalfPlane",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "mul_rat_iff",
+  "informal": "The product `x * r`, `r : \u211a`, `r \u2260 0`, is a Liouville number with exponent `p` if and only if `x` satisfies the same condition.",
+  "signature": "(hr : r \u2260 0) : LiouvilleWith p (x * r) \u2194 LiouvilleWith p x",
+  "module": "NumberTheory.Transcendental.Liouville.LiouvilleWith",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "AbsolutelyContinuousOnInterval.integral_deriv_mul_eq_sub",
+  "informal": "The integral of the derivative of a product of two absolutely continuous functions.",
+  "signature": "{f g : \u211d \u2192 \u211d} {a b : \u211d} (hf : AbsolutelyContinuousOnInterval f a b) (hg : AbsolutelyContinuousOnInterval g a b) : \u222b x in a..b, deriv f x * g x + f x * deriv g x = f b * g b - f a * g a",
+  "module": "MeasureTheory.Integral.IntervalIntegral.AbsolutelyContinuousFun",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "mk_le_mk",
+  "informal": "We now define a long list of structures on \u2115+ induced by similar structures on \u2115. Most of these behave in a completely obvious way, but there are a few things to be said about subtraction, division and powers.",
+  "signature": "(n k : \u2115) (hn : 0 < n) (hk : 0 < k) : (\u27e8n, hn\u27e9 : \u2115+) \u2264 \u27e8k, hk\u27e9 \u2194 n \u2264 k",
+  "module": "Data.PNat.Defs",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "isOpen_im_gt_EReal",
+  "informal": "An open upper half-plane (with boundary imaginary part given by an `EReal`) is an open set in the complex plane.",
+  "signature": "(x : EReal) : IsOpen {z : \u2102 | x < z.im}",
+  "module": "Analysis.Complex.HalfPlane",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "summable_one_div_nat_pow",
+  "informal": "Test for convergence of the `p`-series: the real-valued series `\u2211' n : \u2115, 1 / n ^ p` converges if and only if `1 < p`.",
+  "signature": "{p : \u2115} : Summable (fun n => 1 / (n : \u211d) ^ p : \u2115 \u2192 \u211d) \u2194 1 < p",
+  "module": "Analysis.PSeries",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "RingHom.finite_iff_finiteType_of_isJacobsonRing",
+  "informal": "If `f : R \u2192+* S` is a ring homomorphism from a Jacobson ring to a field, then it is finite if and only if it is finite type.",
+  "signature": "{R S : Type*} [CommRing R] [IsJacobsonRing R] [Field S] {f : R \u2192+* S} : f.Finite \u2194 f.FiniteType",
+  "module": "RingTheory.Jacobson.Ring",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "eq_one_of_sq_sub_mul_sq_eq_zero'",
+  "informal": "The Legendre symbol `legendreSym p a = 1` if there is a solution in `\u2124/p\u2124` of the equation `x^2 - a*y^2 = 0` with `x \u2260 0`.",
+  "signature": "{p : \u2115} [Fact p.Prime] {a : \u2124} (ha : (a : ZMod p) \u2260 0) {x y : ZMod p} (hx : x \u2260 0) (hxy : x ^ 2 - a * y ^ 2 = 0) : legendreSym p a = 1",
+  "module": "NumberTheory.LegendreSymbol.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "strictMono_of_deriv_pos",
+  "informal": "Let `f : \u211d \u2192 \u211d` be a differentiable function. If `f'` is positive, then `f` is a strictly monotone function. Note that we don't require differentiability explicitly as it already implied by the derivative being strictly positive.",
+  "signature": "{f : \u211d \u2192 \u211d} (hf' : \u2200 x, 0 < deriv f x) : StrictMono f",
+  "module": "Analysis.Calculus.Deriv.MeanValue",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "LinearOrderedAddCommGroup.discrete_iff_not_denselyOrdered",
+  "informal": "Any linearly ordered archimedean additive group is either isomorphic (and order-isomorphic) to the integers, or is densely ordered, exclusively. (See also `LinearOrderedAddCommGroup.isAddCyclic_iff_not_denselyOrdered`.)",
+  "signature": "(G : Type*) [AddCommGroup G] [LinearOrder G] [IsOrderedAddMonoid G] [Archimedean G] : Nonempty (G \u2243+o \u2124) \u2194 \u00ac DenselyOrdered G",
+  "module": "GroupTheory.ArchimedeanDensely",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "riemannZeta_im_eq_zero_of_one_lt",
+  "informal": "The Riemann zeta function is real-valued for real arguments greater than 1.",
+  "signature": "{x : \u211d} (hx : 1 < x) : (riemannZeta x).im = 0",
+  "module": "NumberTheory.LSeries.Dirichlet",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "discreteTopology_iff_nhds",
+  "informal": "This lemma characterizes discrete topological spaces as those whose singletons are neighbourhoods.",
+  "signature": "[TopologicalSpace \u03b1] : DiscreteTopology \u03b1 \u2194 \u2200 x : \u03b1, \ud835\udcdd x = pure x",
+  "module": "Topology.Order",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "exists_nat_bool_continuous_surjective_of_compact",
+  "informal": "**Hausdorff\u2013Alexandroff theorem**: every nonempty compact metric space is a continuous image of the Cantor set.",
+  "signature": "(X : Type*) [Nonempty X] [MetricSpace X] [CompactSpace X] : \u2203 f : (\u2115 \u2192 Bool) \u2192 X, Continuous f \u2227 Function.Surjective f",
+  "module": "Topology.MetricSpace.HausdorffAlexandroff",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "derive_trans\u2082",
+  "informal": "Helper lemma to chain together two `simp` proofs and the result of `mkProdPrf`.",
+  "signature": "{\u03b1} [Mul \u03b1] {a b c d e : \u03b1} (h : a = b) (h' : b = c) (h'' : d * c = e) : d * a = e",
+  "module": "Tactic.CancelDenoms.Core",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "isLocalMin_of_deriv'",
+  "informal": "The First-Derivative Test from calculus, minima version, expressed in terms of left and right filters.",
+  "signature": "{f : \u211d \u2192 \u211d} {b : \u211d} (h : ContinuousAt f b) (hd\u2080 : \u2200\u1da0 x in \ud835\udcdd[<] b, DifferentiableAt \u211d f x) (hd\u2081 : \u2200\u1da0 x in \ud835\udcdd[>] b, DifferentiableAt \u211d f x) (h\u2080 : \u2200\u1da0 x in \ud835\udcdd[<] b, deriv f x \u2264 0) (h\u2081 : \u2200\u1da0 x in \ud835\udcdd[>] b, deriv f x \u2265 0) : IsLocalMin f b",
+  "module": "Analysis.Calculus.DerivativeTest",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "Nat.stabilises_of_antitone",
+  "informal": "An antitone function `f : \u2115 \u2192 \u2115` which is constant after stabilising for the first time, stabilises in at most `f 0` steps. Compared to `WellFoundedLT.antitone_chain_condition`, this lemma requires the extra hypothesis `hfstab` and only applies to `\u2115`-valued functions, but in return it gives an explicit bound on the stabilisation index.",
+  "signature": "{f : \u2115 \u2192 \u2115} (hfmono : Antitone f) (hfstab : \u2200 m, f m = f (m + 1) \u2192 f (m + 1) = f (m + 2)) : \u2203 n \u2264 f 0, \u2200 m, n \u2264 m \u2192 f m = f n",
+  "module": "Order.Monotone.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "exists_lt_ack_of_nat_primrec",
+  "informal": "If `f` is primitive recursive, there exists `m` such that `f n < ack m n` for all `n`.",
+  "signature": "{f : \u2115 \u2192 \u2115} (hf : Nat.Primrec f) : \u2203 m, \u2200 n, f n < ack m n",
+  "module": "Computability.Ackermann",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "strictAnti_of_hasDerivAt_neg",
+  "informal": "Let `f : \u211d \u2192 \u211d` be a differentiable function. If `f'` is strictly positive, then `f` is a strictly monotone function.",
+  "signature": "{f f' : \u211d \u2192 \u211d} (hf : \u2200 x, HasDerivAt f (f' x) x) (hf' : \u2200 x, f' x < 0) : StrictAnti f",
+  "module": "Analysis.Calculus.Deriv.MeanValue",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "mono",
+  "informal": "If a number is Liouville with exponent `p`, then it is Liouville with any smaller exponent.",
+  "signature": "(h : LiouvilleWith p x) (hle : q \u2264 p) : LiouvilleWith q x",
+  "module": "NumberTheory.Transcendental.Liouville.LiouvilleWith",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "Function.Surjective.card_le_card_add_one_iff",
+  "informal": "A surjective function `f : \u03b1 \u2192 \u03b2` decreases cardinality by at most one if and only if there is at most a collision between a unique pair of elements.",
+  "signature": "{\u03b1 \u03b2 : Type*} [Finite \u03b1] {f : \u03b1 \u2192 \u03b2} (hf : Function.Surjective f) : Nat.card \u03b1 \u2264 Nat.card \u03b2 + 1 \u2194 \u2200 a b c d, f a = f b \u2192 f c = f d \u2192 a \u2260 b \u2192 c \u2260 d \u2192 {a, b} = ({c, d} : Set \u03b1)",
+  "module": "Data.Set.Card",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "gnpow_eq_pow",
+  "informal": "Bridge between the auto-derived graded-monoid power `GradedMonoid.GMonoid.gnpow` and the bespoke `ModularForm.pow`: as elements of `GradedMonoid (ModularForm \u0393)`, the pair `\u27e8n \u2022 k, gnpow n f\u27e9` agrees with `\u27e8n * k, f.pow n\u27e9`.",
+  "signature": "{\u0393 : Subgroup (GL (Fin 2) \u211d)} [\u0393.HasDetPlusMinusOne] {k : \u2124} (f : ModularForm \u0393 k) (n : \u2115) : (\u27e8n \u2022 k, GradedMonoid.GMonoid.gnpow n f\u27e9 : GradedMonoid (ModularForm \u0393)) = \u27e8(n : \u2124) * k, f.pow n\u27e9",
+  "module": "NumberTheory.ModularForms.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "nnreal_trichotomy",
+  "informal": "Every real number is either zero, positive or negative, phrased using `\u211d\u22650`.",
+  "signature": "(r : \u211d) : r = 0 \u2228 \u2203 x : \u211d\u22650, 0 < x \u2227 (r = x \u2228 r = -x)",
+  "module": "Data.NNReal.Defs",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "geometricMeasure_nonneg",
+  "informal": "The `positivty` tactic does not work for this goal. Use this lemma to rewrite `(ENNReal.ofReal ((1 - p) ^ n * p)).toReal = (1 - p) ^ n * p`.",
+  "signature": "(p : unitInterval) n : 0 \u2264 (1 - p : \u211d) ^ n * p",
+  "module": "Probability.Distributions.Geometric",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "cancel_of_lt'",
+  "informal": "This lemma has an abbreviated name because it is used frequently.",
+  "signature": "{a b : \u211d\u22650\u221e} (h : a < b) : AddLECancellable a",
+  "module": "Data.ENNReal.Operations",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "append_lt",
+  "informal": "Note that the LHS is the expression used within `Std.BitVec.append`, hence the name.",
+  "signature": "{x y n m} (hx : x < 2 ^ n) (hy : y < 2 ^ m) : y <<< n ||| x < 2 ^ (n + m)",
+  "module": "Data.Nat.Bitwise",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "young_inequality_eq_iff_of_nonneg",
+  "informal": "**Young's inequality** equality condition for nonnegative real numbers.",
+  "signature": "{a b p q : \u211d} (ha : 0 \u2264 a) (hb : 0 \u2264 b) (hpq : p.HolderConjugate q) : a * b = a ^ p / p + b ^ q / q \u2194 a ^ p = b ^ q",
+  "module": "Analysis.MeanInequalities",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "strictAnti_iff_forall_covBy",
+  "informal": "A function from a locally finite preorder is strictly antitone if and only if it is strictly antitone when restricted to pairs satisfying `a \u22d6 b`.",
+  "signature": "[Preorder \u03b1] [LocallyFiniteOrder \u03b1] [Preorder \u03b2] (f : \u03b1 \u2192 \u03b2) : StrictAnti f \u2194 \u2200 a b : \u03b1, a \u22d6 b \u2192 f b < f a",
+  "module": "Order.Interval.Finset.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "add",
+  "informal": "The sum of two absolutely monotone functions is absolutely monotone.",
+  "signature": "(hf : AbsolutelyMonotoneOn f s) (hg : AbsolutelyMonotoneOn g s) : AbsolutelyMonotoneOn (f + g) s",
+  "module": "Analysis.Calculus.AbsolutelyMonotone",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "krullTopology_isTotallySeparated",
+  "informal": "If `L/K` is an algebraic field extension, then the Krull topology on `Gal(L/K)` is totally separated.",
+  "signature": "{K L : Type*} [Field K] [Field L] [Algebra K L] [Algebra.IsIntegral K L] : IsTotallySeparated (Set.univ : Set Gal(L/K))",
+  "module": "FieldTheory.KrullTopology",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "ae_differentiableWithinAt_of_mem_real",
+  "informal": "A bounded variation function into `\u211d` is differentiable almost everywhere. Superseded by `ae_differentiableWithinAt_of_mem`.",
+  "signature": "{f : \u211d \u2192 \u211d} {s : Set \u211d} (h : LocallyBoundedVariationOn f s) : \u2200\u1d50 x, x \u2208 s \u2192 DifferentiableWithinAt \u211d f s x",
+  "module": "Analysis.BoundedVariation",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "summable_indicator_mod_iff",
+  "informal": "A decreasing sequence of real numbers is summable on a residue class if and only if it is summable.",
+  "signature": "{m : \u2115} [NeZero m] {f : \u2115 \u2192 \u211d} (hf : Antitone f) (k : ZMod m) : Summable ({n : \u2115 | (n : ZMod m) = k}.indicator f) \u2194 Summable f",
+  "module": "Analysis.SumOverResidueClass",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "strictMono_iff_forall_covBy",
+  "informal": "A function from a locally finite preorder is strictly monotone if and only if it is strictly monotone when restricted to pairs satisfying `a \u22d6 b`.",
+  "signature": "[Preorder \u03b1] [LocallyFiniteOrder \u03b1] [Preorder \u03b2] (f : \u03b1 \u2192 \u03b2) : StrictMono f \u2194 \u2200 a b : \u03b1, a \u22d6 b \u2192 f a < f b",
+  "module": "Order.Interval.Finset.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "val_isUnit",
+  "informal": "The values of an additive character on an additive group are units.",
+  "signature": "{A M} [AddGroup A] [Monoid M] (\u03c6 : AddChar A M) (a : A) : IsUnit (\u03c6 a)",
+  "module": "Algebra.Group.AddChar",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "QuasiFinite.of_isIntegral_of_finiteType",
+  "informal": "If `T` is both a finite type `R`-algebra, and the localization of an integral `R`-algebra, then `T` is quasi-finite over `R`",
+  "signature": "{R S T : Type*} [CommRing R] [CommRing S] [CommRing T] {f : R \u2192+* S} (hf : f.IsIntegral) {g : S \u2192+* T} (hg : g.IsStandardOpenImmersion) (hg : (g.comp f).FiniteType) : (g.comp f).QuasiFinite",
+  "module": "RingTheory.RingHom.QuasiFinite",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "bijective_of_surjective_of_bijective_of_right_exact",
+  "informal": "A special case of the five lemma in terms of modules. For a diagram explaining the variables, see the module docstring.",
+  "signature": "(hi\u2081 : Function.Surjective i\u2081) (hi\u2082 : Function.Bijective i\u2082) (hf\u2082 : Function.Surjective f\u2082) (hg\u2082 : Function.Surjective g\u2082) : Function.Bijective i\u2083",
+  "module": "Algebra.FiveLemma",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "monoidHom_mulEquiv_rootsOfUnity",
+  "informal": "The group of group homomorphisms from a finite cyclic group `G` of order `n` into another group `G'` is (noncanonically) isomorphic to the group of `n`th roots of unity in `G'`.",
+  "signature": "(G : Type*) [CommGroup G] [IsCyclic G] (G' : Type*) [CommGroup G'] : Nonempty <| (G \u2192* G') \u2243* rootsOfUnity (Nat.card G) G'",
+  "module": "RingTheory.RootsOfUnity.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "cancel_right_div_gcd",
+  "informal": "To cancel a common factor `c` from a `ModEq` we must divide the modulus `m` by `gcd m c`",
+  "signature": "(hm : 0 < m) (h : a * c \u2261 b * c [MOD m]) : a \u2261 b [MOD m / gcd m c]",
+  "module": "Data.Nat.ModEq",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "expChar_of_injective_algebraMap",
+  "informal": "If the algebra map `R \u2192+* A` is injective then `A` has the same exponential characteristic as `R`.",
+  "signature": "[CommSemiring R] [Semiring A] [Algebra R A] (h : Function.Injective (algebraMap R A)) (q : \u2115) [ExpChar R q] : ExpChar A q",
+  "module": "Algebra.CharP.Algebra",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "not_isLocalRing_tfae",
+  "informal": "The following conditions are equivalent for a commutative (semi)ring `R`: * `R` is not local, * the maximal spectrum of `R` is nontrivial, * `R` has two distinct maximal ideals.",
+  "signature": "{R : Type*} [CommSemiring R] [Nontrivial R] : List.TFAE [ \u00acIsLocalRing R, Nontrivial (MaximalSpectrum R), \u2203 m\u2081 m\u2082 : Ideal R, m\u2081.IsMaximal \u2227 m\u2082.IsMaximal \u2227 m\u2081 \u2260 m\u2082]",
+  "module": "RingTheory.LocalRing.NonLocalRing",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "pow_dvd_iff_le_padicValNat",
+  "informal": "If `p > 1`, `n > 0`, then the first component of `maxPowDvdDiv` is the maximal power of `p` that divides `n`.",
+  "signature": "{p k n : \u2115} (hp : p \u2260 1) (hn : n \u2260 0) : p ^ k \u2223 n \u2194 k \u2264 padicValNat p n",
+  "module": "Data.Nat.MaxPowDiv",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "spectralRadius_eq",
+  "informal": "If `\ud835\udd5c\u2081` is a normed field contained as subfield of a larger normed field `\ud835\udd5c\u2082`, and if `a : A` is an element whose `\ud835\udd5c\u2082` spectrum restricts to `\ud835\udd5c\u2081`, then the spectral radii over each scalar field coincide.",
+  "signature": "{\ud835\udd5c\u2081 \ud835\udd5c\u2082 A : Type*} [NormedField \ud835\udd5c\u2081] [NormedField \ud835\udd5c\u2082] [NormedRing A] [NormedAlgebra \ud835\udd5c\u2081 A] [NormedAlgebra \ud835\udd5c\u2082 A] [NormedAlgebra \ud835\udd5c\u2081 \ud835\udd5c\u2082] [IsScalarTower \ud835\udd5c\u2081 \ud835\udd5c\u2082 A] {f : \ud835\udd5c\u2082 \u2192 \ud835\udd5c\u2081} {a : A} (h : SpectrumRestricts a f) : spectralRadius \ud835\udd5c\u2081 a = spectralRadius \ud835\udd5c\u2082 a",
+  "module": "Analysis.Normed.Algebra.Spectrum",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "summable_one_div_pow_of_le",
+  "informal": "A series whose terms are bounded by the terms of a converging geometric series converges.",
+  "signature": "{m : \u211d} {f : \u2115 \u2192 \u2115} (hm : 1 < m) (fi : \u2200 i, i \u2264 f i) : Summable fun i \u21a6 1 / m ^ f i",
+  "module": "Analysis.SpecificLimits.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "min_le_padicValRat_add",
+  "informal": "The minimum of the valuations of `q` and `r` is at most the valuation of `q + r`.",
+  "signature": "{q r : \u211a} (hqr : q + r \u2260 0) : min (padicValRat p q) (padicValRat p r) \u2264 padicValRat p (q + r)",
+  "module": "NumberTheory.Padics.PadicVal.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "exists_nat_pow_near",
+  "informal": "Every x greater than or equal to 1 is between two successive natural-number powers of every y greater than one.",
+  "signature": "(hx : 1 \u2264 x) (hy : 1 < y) : \u2203 n : \u2115, y ^ n \u2264 x \u2227 x < y ^ (n + 1)",
+  "module": "Algebra.Order.Archimedean.Basic",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "card_commute_odd",
+  "informal": "If n is odd, then the Dihedral group of order $2n$ has $n(n+3)$ pairs of commuting elements.",
+  "signature": "(hn : Odd n) : Nat.card { p : DihedralGroup n \u00d7 DihedralGroup n // Commute p.1 p.2 } = n * (n + 3)",
+  "module": "GroupTheory.SpecificGroups.Dihedral",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "natCard_rootsOfUnity",
+  "informal": "If `M` satisfies `HasEnoughRootsOfUnity`, then the group of `n`th roots of unity in `M` (is cyclic and) has order `n`.",
+  "signature": "(M : Type*) [CommMonoid M] (n : \u2115) [NeZero n] [HasEnoughRootsOfUnity M n] : Nat.card (rootsOfUnity n M) = n",
+  "module": "RingTheory.RootsOfUnity.EnoughRootsOfUnity",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "StrongRankCondition.of_isArtinian",
+  "informal": "If each `R\u207f` is a Artinian `R`-module, then `R` satisfies the strong rank condition. Not an instance for performance reasons.",
+  "signature": "(R) [Semiring R] [Nontrivial R] [\u2200 n, IsArtinian R (Fin n \u2192 R)] : StrongRankCondition R",
+  "module": "RingTheory.Artinian.Instances",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "convexOn_of_hasDerivWithinAt2_nonneg",
+  "informal": "If a function `f` is continuous on a convex set `D \u2286 \u211d`, is twice differentiable on its interior, and `f''` is nonnegative on the interior, then `f` is convex on `D`.",
+  "signature": "{D : Set \u211d} (hD : Convex \u211d D) {f f' f'' : \u211d \u2192 \u211d} (hf : ContinuousOn f D) (hf' : \u2200 x \u2208 interior D, HasDerivWithinAt f (f' x) (interior D) x) (hf'' : \u2200 x \u2208 interior D, HasDerivWithinAt f' (f'' x) (interior D) x) (hf''\u2080 : \u2200 x \u2208 interior D, 0 \u2264 f'' x) : ConvexOn \u211d D f",
+  "module": "Analysis.Convex.Deriv",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "real_sqrt_lt_nat_sqrt_succ",
+  "informal": "The real square root is less than the natural square root plus one",
+  "signature": "{a : \u2115} : \u221a(a : \u211d) < Nat.sqrt a + 1",
+  "module": "Analysis.Real.Sqrt",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "concaveOn_of_hasDerivWithinAt2_nonpos",
+  "informal": "If a function `f` is continuous on a convex set `D \u2286 \u211d`, is twice differentiable on its interior, and `f''` is nonpositive on the interior, then `f` is concave on `D`.",
+  "signature": "{D : Set \u211d} (hD : Convex \u211d D) {f f' f'' : \u211d \u2192 \u211d} (hf : ContinuousOn f D) (hf' : \u2200 x \u2208 interior D, HasDerivWithinAt f (f' x) (interior D) x) (hf'' : \u2200 x \u2208 interior D, HasDerivWithinAt f' (f'' x) (interior D) x) (hf''\u2080 : \u2200 x \u2208 interior D, f'' x \u2264 0) : ConcaveOn \u211d D f",
+  "module": "Analysis.Convex.Deriv",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "Real.deriv_log_comp_eq_logDeriv",
+  "informal": "The derivative of `log \u2218 f` is the logarithmic derivative provided `f` is differentiable and `f x \u2260 0`.",
+  "signature": "{f : \u211d \u2192 \u211d} {x : \u211d} (h\u2081 : DifferentiableAt \u211d f x) (h\u2082 : f x \u2260 0) : deriv (log \u2218 f) x = logDeriv f x",
+  "module": "Analysis.SpecialFunctions.Log.Deriv",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "parallelepiped_basisFun",
+  "informal": "The parallelepiped formed from the standard basis for `\u03b9 \u2192 \u211d` is `[0,1]^\u03b9`",
+  "signature": "(\u03b9 : Type*) [Fintype \u03b9] : (Pi.basisFun \u211d \u03b9).parallelepiped = TopologicalSpace.PositiveCompacts.piIcc01 \u03b9",
+  "module": "MeasureTheory.Measure.Lebesgue.EqHaar",
+  "elaborates": true,
+  "why": ""
+ },
+ {
+  "name": "isOpen_im_lt_EReal",
+  "informal": "An open lower half-plane (with boundary imaginary part given by an `EReal`) is an open set in the complex plane.",
+  "signature": "(x : EReal) : IsOpen {z : \u2102 | z.im < x}",
+  "module": "Analysis.Complex.HalfPlane",
+  "elaborates": true,
+  "why": ""
+ }
+]

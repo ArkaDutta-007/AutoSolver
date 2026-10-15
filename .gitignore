@@ -1,0 +1,44 @@
+.env
+runs/
+problems/
+__pycache__/
+*.pyc
+.DS_Store
+solutions/
+questions/.transcribed/
+questions/inbox/
+server/logs/
+
+# scratch
+run.out
+_to_delete/
+questions/archive
+run_p4.out
+UPGRADE_PLAN_V2.html
+UPGRADE_PLAN.md
+
+# --- consolidated in-repo data (not source) -------------------------------
+# The Lean project lives here now, not ~/proofs: it holds Proofs/Verified.lean,
+# the accumulated lemma library. Its .lake tree is 7.4 GB of Mathlib source and
+# build artifacts -- rebuildable, never committed.
+lean/.lake/
+lean/build/
+# Built retrieval indexes: ~1 GB of vectors, rebuildable from Mathlib in ~15
+# min per embedder (python3 -m src.mathlib_kb --build).
+kb/*.npy
+kb/corpus.jsonl
+# Learned search state. Rebuildable in principle but expensive to relearn;
+# ignored because it is per-machine, not shared.
+kb/archive.json
+kb/bandit.json
+kb/evolve.json
+# Lean scratch files the REPL leaves behind.
+lean/tmp*.lean
+# Per-machine run logs and learned state, same class as kb/archive.json above.
+traces/
+kb/library.json
+kb/plans.json
+kb/meta.json
+# Formalizer training sets: rebuilt by evals/formalize_dataset.py and
+# evals/fetch_public_pairs.py. v3 is 137 MB, over GitHub's file limit.
+kb/formalize_sft*

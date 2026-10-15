@@ -1,0 +1,78 @@
+[
+ {
+  "problem": "IMO26_P1.txt",
+  "claim": "The final integer $M$ is equal to the product of all initial integers divided by the square of the greatest common divisor of all initial integers.",
+  "scout": "mismatch",
+  "scout_secs": 82.4,
+  "p": 0.05,
+  "truth": null,
+  "prove_secs": 0.0,
+  "note": "signature typechecks but does not say what the claim says -- The claim states that the GCD is of 'all initial integers' (i.e., the GCD of the list elements). The Lean statement calculates `Nat.gcd (in"
+ },
+ {
+  "problem": "IMO26_P1.txt",
+  "claim": "For any prime $p$, let $v_p(k)$ be the exponent of $p$ in $k$. The operation on two numbers $m, n$ transforms the pair of exponents $(v_p(m), v_p(n))$ into $(\\min(v_p(m), v_p(n)), |v_p(m) - v_p(n)|)$.",
+  "scout": "open",
+  "scout_secs": 114.1,
+  "p": 0.05,
+  "truth": false,
+  "prove_secs": 992.1
+ },
+ {
+  "problem": "IMO26_P2.txt",
+  "claim": "The circumcenter $O$ of $\\triangle AKL$ lies on the perpendicular bisector of the segment $MN$.",
+  "scout": "mismatch",
+  "scout_secs": 59.6,
+  "p": 0.0,
+  "truth": null,
+  "prove_secs": 0.0,
+  "note": "signature typechecks but does not say what the claim says -- The statement defines the point $O$ as the centroid of $\triangle AKL$ (the average of the vertices) rather than the circumcenter. The circu"
+ },
+ {
+  "problem": "IMO26_P2.txt",
+  "claim": "The angle conditions $\\angle KBA = \\angle ACL$, $\\angle LBK = \\angle LNC$, and $\\angle LCK = \\angle BMK$ imply that the points $K$ and $L$ are the images of the midpoints $M$ and $N$ under a specific ",
+  "scout": "broken",
+  "scout_secs": 92.2,
+  "p": 0.01,
+  "truth": false,
+  "prove_secs": 618.8
+ },
+ {
+  "problem": "IMO26_P3.txt",
+  "claim": "For every positive integer $n$, the largest value $c_n$ such that Liu may guarantee a total length of at least $c_n$ is $1/2$.",
+  "scout": "mismatch",
+  "scout_secs": 45.5,
+  "p": 0.0,
+  "truth": null,
+  "prove_secs": 0.0,
+  "note": "signature typechecks but does not say what the claim says -- The Lean statement asserts the trivial identity 1/2 = 1/2, which does not define the variable c_n, nor does it relate c_n to the game scena"
+ },
+ {
+  "problem": "IMO26_P3.txt",
+  "claim": "For any finite multiset of positive real numbers summing to 1, the first player in the alternating picking game can guarantee a total sum of at least $1/2$.",
+  "scout": "mismatch",
+  "scout_secs": 52.2,
+  "p": 0.05,
+  "truth": null,
+  "prove_secs": 0.0,
+  "note": "signature typechecks but does not say what the claim says -- The statement is a mismatch because it does not model the alternating picking game. The claim requires proving that the first player can gu"
+ },
+ {
+  "problem": "IMO26_P4.txt",
+  "claim": "The set of real values $\\theta \\in (0, 180^\\circ)$ for which Mulan can guarantee a victory in finitely many steps is exactly the set of angles that are integer multiples of $180^\\circ/n$ for some inte",
+  "scout": "open",
+  "scout_secs": 117.5,
+  "p": 0.05,
+  "truth": false,
+  "prove_secs": 1143.4
+ },
+ {
+  "problem": "IMO26_P4.txt",
+  "claim": "If $\\theta$ is not a rational multiple of $180^\\circ$ (i.e., $\\theta/180^\\circ \\notin \\mathbb{Q}$), then Shan-Yu has a strategy to prevent the game from ever terminating, regardless of Mulan's moves.",
+  "scout": "broken",
+  "scout_secs": 96.1,
+  "p": 0.01,
+  "truth": false,
+  "prove_secs": 629.3
+ }
+]

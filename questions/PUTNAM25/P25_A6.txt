@@ -1,0 +1,4 @@
+Putnam 2025 A6.
+Let b_0 = 0 and, for n >= 0, define b_{n+1} = 2*b_n^2 + b_n + 1.
+For each k >= 1, show that b_{2k+1} - 2*b_{2k} is divisible by 2^(2k+2)
+but not by 2^(2k+3).

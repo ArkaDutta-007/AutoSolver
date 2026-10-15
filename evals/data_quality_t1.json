@@ -1,0 +1,902 @@
+[
+ {
+  "name": "Herald_statements_73469",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem insepDegree_self_extracted (F : Type u) [Field F] : insepDegree F F = 1"
+ },
+ {
+  "name": "NuminaMath-LEAN_148596",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem inequalities_89143 (a b c : \u211d) (ha : 0 < a) (hb : 0 < b) (hc : 0 < c) : Real.sqrt (5 * a ^ 2 + 5 * c ^ 2 + 8 * b ^ 2) / (4 * a * c) + Real.sqrt (5 * b ^ 2 + 5 * c ^ 2 + 8 * a ^ 2) / (4 * b * c) + Real.sqrt (5 * c ^ 2 + 5 * a ^ 2 + 8 * b ^ 2) / (4 * c * a) \u2265 3 * (8 * (a + b) ^ 2 * (b + c) ^ 2 * (c + a) ^ 2 / (a * b * c) ^ 2) ^ ((1 : \u211d) / 9)"
+ },
+ {
+  "name": "NuminaMath-LEAN_118913",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem number_theory_57491 (x y z : \u2115) (h : x * y = z ^ 2 + 1) : \u2203 a b c d : \u2124, x = a ^ 2 + b ^ 2 \u2227 y = c ^ 2 + d ^ 2 \u2227 z = a * c + b * d"
+ },
+ {
+  "name": "Function.Periodic.eq",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem Function.Periodic.eq [AddZeroClass \u03b1] (h : Periodic f c) : f c = f 0"
+ },
+ {
+  "name": "NuminaMath-LEAN_135342",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem number_theory_272615 (l m n : \u2115) (hl : 0 < l) (hm : 0 < m) (hn : 0 < n) (h1 : Nat.Coprime (l * m) n) (h2 : Nat.Coprime (l * n) m) (h3 : Nat.Coprime (m * n) l) : Set.Infinite {(x, y, z) : \u2115 \u00d7 \u2115 \u00d7 \u2115 | x > 0 \u2227 y > 0 \u2227 z > 0 \u2227 x ^ l + y ^ m = z ^ n}"
+ },
+ {
+  "name": "Herald_statements_67205",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem ne_top_iff_extracted [DivisionRing K] [LinearOrderedAddCommMonoidWithTop \u0393\u2080] [Nontrivial \u0393\u2080] (v : AddValuation K \u0393\u2080) {x : K} : v x \u2260 \u22a4 \u2194 x \u2260 0"
+ },
+ {
+  "name": "NuminaMath-LEAN_144556",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem number_theory_102626 (a b c n : \u2115) (ha : 0 < a) (hb : 0 < b) (hc : 0 < c) (hn : 0 < n) : 2 \u2223 (a^n + b^n) * (c^n + b^n) * (a^n + c^n) \u2227 15 \u2223 4^((a^n + b^n) * (c^n + b^n) * (a^n + c^n)) - 1"
+ },
+ {
+  "name": "Herald_statements_79231",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem countable_isTop_extracted (\u03b1 : Type u_1) [PartialOrder \u03b1] : {x | IsTop x}.Countable"
+ },
+ {
+  "name": "Herald_statements_43944",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem hasColimit_of_comp_equivalence_extracted [CategoryTheory.Category.{v\u2081 : u\u2081} C] [CategoryTheory.Category.{v\u2082, u\u2082} D] [CategoryTheory.Category.{v, u} J] (K : CategoryTheory.Functor J C) (E : CategoryTheory.Functor C D) [E.IsEquivalence] [CategoryTheory.Limits.HasColimit (K.comp E)], CategoryTheory.Limits.HasColimit K"
+ },
+ {
+  "name": "Lean-Workbook_198185",
+  "module": "internlm/Lean-Workbook",
+  "elaborates": true,
+  "formal": "theorem lean_workbook_plus_21731 (a b : \u211d) (h1 : a \u2260 b) (h2 : a \u2260 -b) : (a + b) ^ 2 / 4 > a * b"
+ },
+ {
+  "name": "Herald_statements_64190",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem is_localization_away_iff_extracted {P : \u2192 [CommRing R] \u2192 [CommRing S] \u2192 (R \u2192+* S) \u2192 Prop} : RingHom.RespectsIso P \u2192 \u2200 (R' S' : Type u) [CommRing R] [CommRing S] [CommRing R'] [CommRing S'] [Algebra R R'] [Algebra S S'] (f : R \u2192+* S) (r : R) [IsLocalization.Away r R'] [IsLocalization.Away (f r) S'], P (Localization.awayMap f r) \u2194 P (IsLocalization.Away.map R' S' f r)"
+ },
+ {
+  "name": "Herald_statements_60189",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem continuous_coe_extracted [TopologicalSpace \u03b1] : Continuous ConnectedComponents.mk"
+ },
+ {
+  "name": "Herald_statements_55998",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem isSemisimpleRing_of_surjective_extracted [Ring R] [Ring S] (f : R \u2192+* S) : Function.Surjective \u21d1f \u2192 \u2200 [IsSemisimpleRing R], IsSemisimpleRing S"
+ },
+ {
+  "name": "NuminaMath-LEAN_91126",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem algebra_20693 {f : \u211d \u2192 \u211d} (h3 : f 3 = 5) (hf : \u2200 x > 0, f (3 * x) = f x + 2)(hfinv: Function.LeftInverse (f.invFun) f): f.invFun 11 = 81"
+ },
+ {
+  "name": "NuminaMath-LEAN_102854",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem number_theory_269996 (m : \u2115) (hm : 2022 < m) : (2022 + m) \u2223 2022 * m \u2194 m = 1011 \u2228 m = 2022"
+ },
+ {
+  "name": "Herald_statements_21984",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem tendsto_tan_neg_pi_div_two_extracted : Tendsto Real.tan (\ud835\udcdd[>] (-(Real.pi / 2))) atBot"
+ },
+ {
+  "name": "Herald_statements_15047",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem isRadical_vanishingIdeal_extracted [CommSemiring R] (s : Set (PrimeSpectrum R)) : (PrimeSpectrum.vanishingIdeal s).IsRadical"
+ },
+ {
+  "name": "Filter.EventuallyEq.lineDerivWithin_eq",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem Filter.EventuallyEq.lineDerivWithin_eq (hs : f\u2081 =\u1da0[\ud835\udcdd[s] x] f) (hx : f\u2081 x = f x) : lineDerivWithin \ud835\udd5c f\u2081 s x v = lineDerivWithin \ud835\udd5c f s x v"
+ },
+ {
+  "name": "Herald_statements_43358",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem freeGroupoidFunctor_comp_extracted [Quiver V] [Quiver V'] [Quiver V''] (\u03c6 : V \u2964q V') (\u03c6' : V' \u2964q V'') : CategoryTheory.freeGroupoidFunctor (\u03c6 \u22d9q \u03c6') = (CategoryTheory.freeGroupoidFunctor \u03c6).comp (CategoryTheory.freeGroupoidFunctor \u03c6')"
+ },
+ {
+  "name": "NuminaMath-LEAN_95316",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": false,
+  "formal": "lemma base_case : sumReciprocals 2 = 1 / 2"
+ },
+ {
+  "name": "AlgebraicGeometry.isPullback_morphismRestrict",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem AlgebraicGeometry.isPullback_morphismRestrict {X Y : Scheme.{u}} (f : X \u27f6 Y) (U : Y.Opens) : IsPullback (f \u2223_ U) (f \u207b\u00b9\u1d41 U).\u03b9 U.\u03b9 f"
+ },
+ {
+  "name": "NuminaMath-LEAN_125592",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem algebra_9237 (s : \u211d \u2192 \u211d) (h\u2080 : s = fun t => t^2 + 3 / t) : deriv s 2 = 13 / 4"
+ },
+ {
+  "name": "Herald_statements_57884",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem congr_arg_extracted [TopologicalSpace \u03b1] [TopologicalSpace \u03b2] (f : C(\u03b1 : \u03b2)) {x y : \u03b1}, x = y \u2192 f x = f y"
+ },
+ {
+  "name": "NuminaMath-LEAN_115412",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": false,
+  "formal": "theorem calculus_35624 {a b : \u211d} (ha : 0 < a) (hb : a < b) (f : \u211d \u2192 \u211d) (hf : ContinuousOn f (Set.Ici 0)) : Tendsto (\u03bb \u03b5 => \u222b x in (a * \u03b5)..(b * \u03b5), f x / x) (\ud835\udcdd[>] 0) (\ud835\udcdd (f 0 * Real.log (b / a))) \u2227 (\u2203 L, Tendsto (\u03bb \u03b5 => \u222b x in (1)..\u03b5, f x / x) atTop (\ud835\udcdd L)) \u2192 \u2203 L, Tendsto (\u03bb \u03b5 => \u222b x in (0)..\u03b5, (f (b * x) - f (a * x)) / x) atTop (\ud835\udcdd L) \u2227 L = f 0 * Real.log (a / b)"
+ },
+ {
+  "name": "Herald_statements_56787",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem image_closedBall_extracted [PseudoMetricSpace \u03b1] [PseudoMetricSpace \u03b2] (h : \u03b1 \u2243\u1d62 \u03b2) (x : \u03b1) (r : \u211d) : \u21d1h '' Metric.closedBall x r = Metric.closedBall (h x) r"
+ },
+ {
+  "name": "Herald_statements_67359",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem coe_pi_extracted [Semiring R] [TopologicalSpace M] [AddCommMonoid M] [Module R M] {\u03c6 : \u03b9 \u2192 Type u_5} [(i : \u03b9) \u2192 TopologicalSpace (\u03c6 i)] [(i : \u03b9) \u2192 AddCommMonoid (\u03c6 i)] [(i : \u03b9) \u2192 Module R (\u03c6 i)] (f : (i : \u03b9) \u2192 M \u2192L[R] \u03c6 i) : \u2191(ContinuousLinearMap.pi f) = LinearMap.pi fun i => \u2191(f i)"
+ },
+ {
+  "name": "Herald_statements_6411",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem sumCoords_reindex_extracted [Semiring R] [AddCommMonoid M] [Module R M] (b : Basis \u03b9 R M) (e : \u03b9 \u2243 \u03b9') : (b.reindex e).sumCoords = b.sumCoords"
+ },
+ {
+  "name": "NuminaMath-LEAN_121973",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem number_theory_187867 {\u03c6 : \u2115 \u2192 \u2115} (h\u03c6 : \u2200 n, \u03c6 n = {x | x < n \u2227 Nat.Coprime x n}.ncard) (x : \u2115) (hx : x = \u03c6 (n * d)) (hy : y = \u03c6 n) (hxy : x = 64000) : n = 41"
+ },
+ {
+  "name": "NuminaMath-LEAN_139816",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": false,
+  "formal": "theorem inequalities_27687 (n : \u2115) (hn : n > 2) : 1 / 2 < \u222b x in (0)..(1 / 2), 1 / sqrt (1 - x ^ n) \u2227 \u222b x in (0)..(1 / 2), 1 / sqrt (1 - x ^ n) < Real.pi / 6"
+ },
+ {
+  "name": "Herald_statements_41802",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem bind_extracted {n : \u2115} {f : Vector \u2115 n \u2192. \u2115} {g : Vector \u2115 (n + 1) \u2192. \u2115} : Nat.Partrec' f \u2192 Nat.Partrec' g \u2192 Nat.Partrec' fun v => (f v).bind fun a => g (a ::\u1d65 v)"
+ },
+ {
+  "name": "Lean-Workbook_196908",
+  "module": "internlm/Lean-Workbook",
+  "elaborates": true,
+  "formal": "theorem lean_workbook_plus_14391 (x y : \u211d) : 1 + |x * y - 1| \u2264 (1 + |x - 1|) * (1 + |y - 1|)"
+ },
+ {
+  "name": "ChainComplex.next_nat_zero",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": true,
+  "formal": "theorem ChainComplex.next_nat_zero : (ComplexShape.down \u2115).next 0 = 0"
+ },
+ {
+  "name": "NuminaMath-LEAN_118343",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": false,
+  "formal": "theorem algebra_154752 {n : \u2115} (c : \u2115 \u2192 \u2115 \u2192 \u211d) (h : \u2200 k, c n k = Nat.choose n k) (a : \u2115 \u2192 \u211d) (h' : \u2200 x, \u2211 h in Finset.range (n + 1), c n h * x^(n - h) * (x - 1)^h = \u2211 i in Finset.range (n + 1), a i * x^i) : \u2211 i in Finset.range (n + 1), |a i| = 3^n"
+ },
+ {
+  "name": "Herald_statements_22068",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem log_zero_extracted : Real.log 0 = 0"
+ },
+ {
+  "name": "Algebra.TensorProduct.basis_repr_symm_apply",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem Algebra.TensorProduct.basis_repr_symm_apply (a : A) (i : \u03b9) : (basis A b).repr.symm (Finsupp.single i a) = a \u2297\u209c b.repr.symm (Finsupp.single i 1)"
+ },
+ {
+  "name": "Herald_statements_36307",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem iSup_emptyset_extracted [CompleteLattice \u03b1] {f : \u03b2 \u2192 \u03b1} : \u2a06 x \u2208 \u2205, f x = \u22a5"
+ },
+ {
+  "name": "Herald_statements_84300",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem coe_pmap_extracted {p : \u03b1 \u2192 Prop} (f : (a : \u03b1) \u2192 p a \u2192 \u03b2) (l : List \u03b1) (H : \u2200 a \u2208 l : p a), Multiset.pmap f (\u2191l) H = \u2191(pmap f l H)"
+ },
+ {
+  "name": "MeasureTheory.SignedMeasure.subset_positive_null_set",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem MeasureTheory.SignedMeasure.subset_positive_null_set (hu : MeasurableSet u) (hv : MeasurableSet v) (hw : MeasurableSet w) (hsu : 0 \u2264[u] s) (hw\u2081 : s w = 0) (hw\u2082 : w \u2286 u) (hwt : v \u2286 w) : s v = 0"
+ },
+ {
+  "name": "Herald_statements_84656",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem inv_mul_le_one_extracted (a : ENNReal) : a\u207b\u00b9 * a \u2264 1"
+ },
+ {
+  "name": "NuminaMath-LEAN_131695",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem number_theory_250756 (a b : \u2115) (_ : 0 < a) (h\u2080 : 0 < b) (h\u2081 : 96 * a ^ 2 = b ^ 3) : a \u2265 12"
+ },
+ {
+  "name": "NuminaMath-LEAN_112136",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem number_theory_52248 : IsGreatest {k | \u2203 n, 3^11 = \u2211 i \u2208 Finset.range k, (n + i)} 486"
+ },
+ {
+  "name": "Lean-Workbook_206121",
+  "module": "internlm/Lean-Workbook",
+  "elaborates": false,
+  "formal": "theorem lean_workbook_plus_70682 (a b c d : \u2115) (h\u2081 : a \u2260 c) (h\u2082 : b \u2209 Finset.Icc 0 1) (h\u2083 : d \u2209 Finset.Icc 0 1) : \u2203 a b c d, a \u2260 c \u2227 b \u2209 Finset.Icc 0 1 \u2227 d \u2209 Finset.Icc 0 1 \u2227 choose a b = choose c d"
+ },
+ {
+  "name": "Herald_statements_43223",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem hom_ext_of_isLeftKanExtension_extracted [CategoryTheory.Category.{u_9 : u_1} C] [CategoryTheory.Category.{u_8, u_3} H] [CategoryTheory.Category.{u_7, u_5} D] (F' : CategoryTheory.Functor D H) {L : CategoryTheory.Functor C D} {F : CategoryTheory.Functor C H} (\u03b1 : F \u27f6 L.comp F') [F'.IsLeftKanExtension \u03b1] {G : CategoryTheory.Functor D H} (\u03b3\u2081 \u03b3\u2082 : F' \u27f6 G), CategoryTheory.CategoryStruct.comp \u03b1 (CategoryTheory.whiskerLeft L \u03b3\u2081) = CategoryTheory.CategoryStruct.comp \u03b1 (CategoryTheory.whiskerLeft L \u03b3\u2082) \u2192 \u03b3\u2081 = \u03b3\u2082"
+ },
+ {
+  "name": "Herald_statements_37095",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem prod_extracted {r : \u03b1 \u2192 \u03b1 \u2192 Prop} {r' : \u03b2 \u2192 \u03b2 \u2192 Prop} {s : Set \u03b1} [IsRefl \u03b1 r] [IsTrans \u03b1 r] {t : Set \u03b2} : s.PartiallyWellOrderedOn r \u2192 t.PartiallyWellOrderedOn r' \u2192 (s \u00d7\u02e2 t).PartiallyWellOrderedOn fun x y => r x.1 y.1 \u2227 r' x.2 y.2"
+ },
+ {
+  "name": "Herald_statements_28488",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem wOppSide_iff_exists_right_extracted [LinearOrderedField R] [AddCommGroup V] [Module R V] [AddTorsor V P] {s : AffineSubspace R P} {x y p\u2082 : P} : p\u2082 \u2208 s \u2192 (s.WOppSide x y \u2194 y \u2208 s \u2228 \u2203 p\u2081 \u2208 s, SameRay R (x -\u1d65 p\u2081) (p\u2082 -\u1d65 y))"
+ },
+ {
+  "name": "NuminaMath-LEAN_135902",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem number_theory_254221 (m c : \u2115) (h\u2080 : m + c = 200) (h\u2081 : m < 100) (h\u2082 : m > (4 / 5 : \u211a) * c) (h\u2083 : 8 \u2223 m) (h\u2084 : 8 \u2223 c) : m = 96 \u2227 c = 104"
+ },
+ {
+  "name": "Lean-Workbook_200728",
+  "module": "internlm/Lean-Workbook",
+  "elaborates": false,
+  "formal": "theorem lean_workbook_plus_37281 : \u2211 k in Finset.range 20, k = 210"
+ },
+ {
+  "name": "LieAlgebra.IsKilling.isCrystallographic_rootSystem",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem LieAlgebra.IsKilling.isCrystallographic_rootSystem : (rootSystem H).IsCrystallographic"
+ },
+ {
+  "name": "Herald_statements_80698",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem card_mono_extracted (k : Type u_1) [Field k] (K : Type u_2) [Field K] [Algebra k K] [NumberField k] [NumberField K] : Fintype.card (NumberField.InfinitePlace k) \u2264 Fintype.card (NumberField.InfinitePlace K)"
+ },
+ {
+  "name": "Herald_statements_61375",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem mod_le_extracted (a b : Ordinal.{u_4}) : a % b \u2264 a"
+ },
+ {
+  "name": "Herald_statements_83287",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem nonempty_iInter_Iic_iff_extracted {\u03b9 : Sort u_4} [Preorder \u03b1] {f : \u03b9 \u2192 \u03b1} : (\u22c2 i, Iic (f i)).Nonempty \u2194 BddBelow (range f)"
+ },
+ {
+  "name": "Herald_statements_51258",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem diam_eq_zero_iff_extracted [EMetricSpace \u03b2] {s : Set \u03b2} : EMetric.diam s = 0 \u2194 s.Subsingleton"
+ },
+ {
+  "name": "NuminaMath-LEAN_112302",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem number_theory_769 (a b x : \u2115) : 3^a + 7^b = x^2 \u2194 (a, b) = (1, 0)"
+ },
+ {
+  "name": "Herald_statements_70482",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem pow_extracted [CommSemiring R] {x y : R} {m n : \u2115} : IsCoprime x y \u2192 IsCoprime (x ^ m) (y ^ n)"
+ },
+ {
+  "name": "Herald_statements_19264",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem ccos_extracted [NormedAddCommGroup E] [NormedSpace \u2102 E] {f : E \u2192 \u2102} {n : \u2115\u221e} : ContDiff \u2102 n f \u2192 ContDiff \u2102 n fun x => Complex.cos (f x)"
+ },
+ {
+  "name": "NuminaMath-LEAN_128486",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem algebra_107462 {a : \u211d} (ha : a^3 - a - 1 = 0) : (a + Real.sqrt 2)^6 - 8 * (a + Real.sqrt 2)^4 - 2 * (a + Real.sqrt 2)^3 + 13 * (a + Real.sqrt 2)^2 - 10 * (a + Real.sqrt 2) - 1 = 0"
+ },
+ {
+  "name": "Lean-Workbook_196072",
+  "module": "internlm/Lean-Workbook",
+  "elaborates": true,
+  "formal": "theorem lean_workbook_plus_9284 (a b c : \u211d) (ha : 0 < a) (hb : 0 < b) (hc : 0 < c) (habc : a * b * c = 1) : a * Real.sqrt a + b * Real.sqrt b + c * Real.sqrt c >= 3 \u2192 a * b * c + 2 >= 9 / (a ^ 3 + b ^ 3 + c ^ 3)"
+ },
+ {
+  "name": "NuminaMath-LEAN_93997",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": false,
+  "formal": "theorem algebra_233022 (a : \u211d) : {x | |x^3 - a^3| = x - a}.encard = 3 \u2194 a \u2208 Ioo (-(2 / \u221a3)) (-(1 / \u221a3))"
+ },
+ {
+  "name": "Herald_statements_58977",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem exists_cons_eq_concat_extracted {G : SimpleGraph V} {u v w : V} (h : G.Adj u v) (p : G.Walk v w) : \u2203 x q, \u2203 (h' : G.Adj x w), SimpleGraph.Walk.cons h p = q.concat h'"
+ },
+ {
+  "name": "NuminaMath-LEAN_133271",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem algebra_120485 (v1 v2 : \u211d) (h : v1 > 0 \u2227 v2 > 0) (h1 : 1 / v1 = 4 / v2 + 1) : v1 / v2 = 2"
+ },
+ {
+  "name": "NuminaMath-LEAN_127702",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem inequalities_148775 : {x : \u211d | x^2 - 2 * x + 1 - abs (x^3 - 1) - 2 * (x^2 + x + 1)^2 \u2265 0} = {x | -1 \u2264 x \u2227 x \u2264 -1 / 2}"
+ },
+ {
+  "name": "NuminaMath-LEAN_123226",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem algebra_323297 {a : \u2115 \u2192 \u211d} (ha1 : a 1 = 1) (han : \u2200 n > 0, a (n + 1) = 1 + a n + Real.sqrt (1 + 4 * a n)) : \u2200 n > 0, a n = 1 + (n - 1) * (n + Real.sqrt 5 - 1)"
+ },
+ {
+  "name": "Herald_statements_5133",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem coeFn_le_extracted [MeasurableSpace \u03b1] {\u03bc : Measure \u03b1} [TopologicalSpace \u03b2] [Preorder \u03b2] {f g : \u03b1 \u2192\u2098[\u03bc] \u03b2} : \u2191f \u2264\u1da0[ae \u03bc] \u2191g \u2194 f \u2264 g"
+ },
+ {
+  "name": "Lean-Workbook_194572",
+  "module": "internlm/Lean-Workbook",
+  "elaborates": true,
+  "formal": "theorem lean_workbook_plus_298 : ((55 * 35) / (12^7) : \u211a) = (55 * 35) / (12^7)"
+ },
+ {
+  "name": "NuminaMath-LEAN_90483",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem algebra_11362 (x : Fin 3 \u2192 \u211d) (hx : \u2200 i j, i < j \u2192 x i < x j) (h : \u2200 i, \u221a2014 * x i ^ 3 - 4029 * x i ^ 2 + 2 = 0) : x 1 * (x 0 + x 2) = 2"
+ },
+ {
+  "name": "ExistsContDiffBumpBase.w_nonneg",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem ExistsContDiffBumpBase.w_nonneg (D : \u211d) (x : E) : 0 \u2264 w D x"
+ },
+ {
+  "name": "Herald_statements_18952",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem hasDerivAt_arccos_extracted {x : \u211d} : x \u2260 -1 \u2192 x \u2260 1 \u2192 HasDerivAt Real.arccos (-(1 / \u221a(1 - x ^ 2))) x"
+ },
+ {
+  "name": "Herald_statements_33418",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem compl_mem_coprod\u1d62_extracted {\u03b1 : \u03b9 \u2192 Type u_2} {f : (i : \u03b9) \u2192 Filter (\u03b1 i)} {s : Set ((i : \u03b9) \u2192 \u03b1 i)} : s\u1d9c \u2208 Filter.coprod\u1d62 f \u2194 \u2200 (i : \u03b9), (eval i '' s)\u1d9c \u2208 f i"
+ },
+ {
+  "name": "Lean-Workbook_207552",
+  "module": "internlm/Lean-Workbook",
+  "elaborates": true,
+  "formal": "theorem lean_workbook_plus_79679 : (7^1996) % 10 = 1"
+ },
+ {
+  "name": "Option.map\u2082_comm",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem Option.map\u2082_comm {g : \u03b2 \u2192 \u03b1 \u2192 \u03b3} (h_comm : \u2200 a b, f a b = g b a) : map\u2082 f a b = map\u2082 g b a"
+ },
+ {
+  "name": "Filter.EventuallyConst.mulIndicator_const_iff",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem Filter.EventuallyConst.mulIndicator_const_iff : EventuallyConst (s.mulIndicator fun _ \u21a6 c) l \u2194 c = 1 \u2228 EventuallyConst s l"
+ },
+ {
+  "name": "NuminaMath-LEAN_144257",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem algebra_159596 (n : \u2124) : n^5 - 2 * n^4 - 7 * n^2 - 7 * n + 3 = 0 \u2194 n = -1 \u2228 n = 3"
+ },
+ {
+  "name": "Herald_statements_85470",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem succAbove_rev_right_extracted {n : \u2115} (p : Fin (n + 1)) (i : Fin n) : p.succAbove i.rev = (p.rev.succAbove i).rev"
+ },
+ {
+  "name": "Herald_statements_77498",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem filter_range_nth_subset_insert_extracted (p : \u2115 \u2192 Prop) [DecidablePred p] (k : \u2115) : filter p (range (Nat.nth p (k + 1))) \u2286 insert (Nat.nth p k) (filter p (range (Nat.nth p k)))"
+ },
+ {
+  "name": "Herald_statements_52289",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem inseparable_of_nhdsWithin_eq_extracted [TopologicalSpace X] {x y : X} {s : Set X} : x \u2208 s \u2192 y \u2208 s \u2192 \ud835\udcdd[s] x = \ud835\udcdd[s] y \u2192 (x ~\u1d62 y)"
+ },
+ {
+  "name": "Herald_statements_78352",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem isRotated_iff_mod_extracted {l l' : List \u03b1} : l ~r l' \u2194 \u2203 n \u2264 l.length, l.rotate n = l'"
+ },
+ {
+  "name": "NuminaMath-LEAN_116122",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem algebra_245794 : (\u2211 i \u2208 Finset.range 2015, (1 / (i + 1))) / 2015 < (\u2211 i \u2208 Finset.range 2016, (1 / (i + 1))) / 2016"
+ },
+ {
+  "name": "Herald_statements_14693",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem withDensity_le_mul_extracted [MetricSpace \u03b1] {m0 : MeasurableSpace \u03b1} {\u03bc : Measure \u03b1} (v : VitaliFamily \u03bc) [SecondCountableTopology \u03b1] [BorelSpace \u03b1] [IsLocallyFiniteMeasure \u03bc] {\u03c1 : Measure \u03b1} [IsLocallyFiniteMeasure \u03c1] (h\u03c1 : \u03c1 \u226a \u03bc) {s : Set \u03b1} : MeasurableSet s \u2192 \u2200 {t : \u211d\u22650}, 1 < t \u2192 (\u03bc.withDensity (v.limRatioMeas h\u03c1)) s \u2264 \u2191t ^ 2 * \u03c1 s"
+ },
+ {
+  "name": "Herald_statements_58559",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem coe_smul_extracted [TopologicalSpace \u03b1] [TopologicalSpace M] [SMul R M] [ContinuousConstSMul R M] (c : R) (f : C(\u03b1 : M)), \u21d1(c \u2022 f) = c \u2022 \u21d1f"
+ },
+ {
+  "name": "Herald_statements_34234",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem himp_bihimp_eq_inf_extracted [GeneralizedHeytingAlgebra \u03b1] (a b : \u03b1) : (b \u21e8 a) \u21d4 b = a \u2293 b"
+ },
+ {
+  "name": "Herald_statements_69251",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem adjoin_union_coe_submodule_extracted (R : Type uR) [CommSemiring R] [CommSemiring A] [Algebra R A] (s t : Set A) : toSubmodule (adjoin R (s \u222a t)) = toSubmodule (adjoin R s) * toSubmodule (adjoin R t)"
+ },
+ {
+  "name": "Herald_statements_40307",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem isPreconnected_extracted (C : Type u) [CategoryTheory.Category.{v : u} C] [CategoryTheory.IsFilteredOrEmpty C], CategoryTheory.IsPreconnected C"
+ },
+ {
+  "name": "Herald_statements_7121",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem bound_lt_top_extracted {m\u03b1 : MeasurableSpace \u03b1} {m\u03b2 : MeasurableSpace \u03b2} (\u03ba : ProbabilityTheory.Kernel \u03b1 \u03b2) [h : ProbabilityTheory.IsFiniteKernel \u03ba] : ProbabilityTheory.IsFiniteKernel.bound \u03ba < \u22a4"
+ },
+ {
+  "name": "Herald_statements_34421",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem coe_copy_extracted [CompleteLattice \u03b1] [CompleteLattice \u03b2] (f : FrameHom \u03b1 \u03b2) (f' : \u03b1 \u2192 \u03b2) (h : f' = \u21d1f) : \u21d1(f.copy f' h) = f'"
+ },
+ {
+  "name": "Herald_statements_12834",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem isCondKernelCDF_stieltjesOfMeasurableRat_extracted {m\u03b1 : MeasurableSpace \u03b1} {m\u03b2 : MeasurableSpace \u03b2} {\u03ba : ProbabilityTheory.Kernel \u03b1 (\u03b2 \u00d7 \u211d)} {\u03bd : ProbabilityTheory.Kernel \u03b1 \u03b2} {f : \u03b1 \u00d7 \u03b2 \u2192 \u211a \u2192 \u211d} (hf : ProbabilityTheory.IsRatCondKernelCDF f \u03ba \u03bd) [ProbabilityTheory.IsFiniteKernel \u03ba] : ProbabilityTheory.IsCondKernelCDF (ProbabilityTheory.stieltjesOfMeasurableRat f \u22ef) \u03ba \u03bd"
+ },
+ {
+  "name": "NuminaMath-LEAN_105341",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem algebra_196004 {a b : \u211d} (ha : a \u2260 -1) (hb : b \u2260 1) (h : a - b + 2 \u2260 0) (h1 : a + 1 / (a + 1) = b + 1 / (b - 1) - 2) (P : \u211d) (hP : P = a * b - a + b) : P = 2"
+ },
+ {
+  "name": "Herald_statements_58528",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem isOpen_extracted [TopologicalSpace X] [CompactlyGeneratedSpace X] {s : Set X} : (\u2200 \u2983K : Set X\u2984, IsCompact K \u2192 IsOpen (s \u2229 K)) \u2192 IsOpen s"
+ },
+ {
+  "name": "NuminaMath-LEAN_98834",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem number_theory_28717 : \u00ac\u2203 (x y z : \u211a), x + y + z = 0 \u2227 x ^ 2 + y ^ 2 + z ^ 2 = 100"
+ },
+ {
+  "name": "NuminaMath-LEAN_146294",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem inequalities_82212 (a b c d : \u211d) (ha : 0 \u2264 d) (hd : d < c) (hc : c < b) (hb : b < a) (h : a + d = b + c) (x : \u211d) (hx : 0 < x) : x ^ a + x ^ d \u2265 x ^ b + x ^ c"
+ },
+ {
+  "name": "Herald_statements_72070",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem nonarchimedean_extracted {p : \u2115} [hp : Fact (Nat.Prime p)] (q r : \u211a_[p]) : \u2016q + r\u2016 \u2264 max \u2016q\u2016 \u2016r\u2016"
+ },
+ {
+  "name": "Herald_statements_54689",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem mk_empty_extracted : Cardinal.mk Empty = 0"
+ },
+ {
+  "name": "Herald_statements_34869",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem coe_sInf_extracted [CompleteLattice \u03b1] [DecidableRel fun x x_1 => x \u2264 x_1] (S : Set (Interval \u03b1)) : \u2191(sInf S) = \u22c2 s \u2208 S, \u2191s"
+ },
+ {
+  "name": "NuminaMath-LEAN_144838",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem number_theory_110189 {n : \u2115} (h : n \u2260 0) (h1 : 100 % n = 16) (h2 : 200 % n = 4) : n = 28"
+ },
+ {
+  "name": "List.Pi.mem_enum",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem List.Pi.mem_enum (f : \u2200 a, \u03b2 a) : f \u2208 Pi.enum \u03b2"
+ },
+ {
+  "name": "Herald_statements_61589",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem rank_lt_of_rel_extracted {r : \u03b1 \u2192 \u03b1 \u2192 Prop} {a b : \u03b1} (hwf : WellFounded r) : r a b \u2192 hwf.rank a < hwf.rank b"
+ },
+ {
+  "name": "Herald_statements_64199",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem isStandardSmooth_extracted (n : \u2115) [CommRing R] [CommRing S] (f : R \u2192+* S) : RingHom.IsStandardSmoothOfRelativeDimension n f \u2192 f.IsStandardSmooth"
+ },
+ {
+  "name": "PowerBasis.trace_gen_eq_sum_roots",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem PowerBasis.trace_gen_eq_sum_roots [Nontrivial S] (pb : PowerBasis K S) (hf : (minpoly K pb.gen).Splits (algebraMap K F)) : algebraMap K F (trace K S pb.gen) = ((minpoly K pb.gen).aroots F).sum"
+ },
+ {
+  "name": "Lean-Workbook_195709",
+  "module": "internlm/Lean-Workbook",
+  "elaborates": true,
+  "formal": "theorem lean_workbook_plus_7118 (x : \u211d) (hx : 0 < x) : 2 * x * Real.sqrt x - 3 * x + 1 \u2265 0"
+ },
+ {
+  "name": "NuminaMath-LEAN_128410",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": false,
+  "formal": "theorem calculus_13792 : tan (\u03c0 / 24) + tan (7 * \u03c0 / 24) = 2 * sqrt 6 - 2 * sqrt 3"
+ },
+ {
+  "name": "bihimp_of_ge",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem bihimp_of_ge {a b : \u03b1} (h : b \u2264 a) : a \u21d4 b = a \u21e8 b"
+ },
+ {
+  "name": "NuminaMath-LEAN_139519",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem inequalities_6159 (a b c : \u211d) (ha : 0 \u2264 a) (hb : 0 \u2264 b) (hc : 0 \u2264 c) (h : a * b + b * c + c * a > 0) : (a ^ 2 - b * c) * (b ^ 2 - c * a) / (a + b + 3 * c) + (b ^ 2 - c * a) * (c ^ 2 - a * b) / (b + c + 3 * a) + (c ^ 2 - a * b) * (a ^ 2 - b * c) / (c + a + 3 * b) \u2264 0"
+ },
+ {
+  "name": "Multiset.bind_hcongr",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": true,
+  "formal": "theorem Multiset.bind_hcongr {\u03b2' : Type v} {m : Multiset \u03b1} {f : \u03b1 \u2192 Multiset \u03b2} {f' : \u03b1 \u2192 Multiset \u03b2'} (h : \u03b2 = \u03b2') (hf : \u2200 a \u2208 m, HEq (f a) (f' a)) : HEq (bind m f) (bind m f')"
+ },
+ {
+  "name": "CategoryTheory.Subgroupoid.full_empty",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem CategoryTheory.Subgroupoid.full_empty : full \u2205 = (\u22a5 : Subgroupoid C)"
+ },
+ {
+  "name": "Matrix.IsHermitian.inv",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem Matrix.IsHermitian.inv [Fintype m] [DecidableEq m] {A : Matrix m m \u03b1} (hA : A.IsHermitian) : A\u207b\u00b9.IsHermitian"
+ },
+ {
+  "name": "Herald_statements_31090",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem disjoint_iff_extracted {P Q : Prop} : Disjoint P Q \u2194 \u00ac(P \u2227 Q)"
+ },
+ {
+  "name": "NuminaMath-LEAN_137792",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem algebra_8106 {a b : \u211d} (h : |3 * a - 1| + Real.sqrt b = 0) : a ^ b = 1"
+ },
+ {
+  "name": "CategoryTheory.OverPresheafAux.YonedaCollection.map\u2082_id",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem CategoryTheory.OverPresheafAux.YonedaCollection.map\u2082_id : YonedaCollection.map\u2082 F (\ud835\udfd9 X) = id"
+ },
+ {
+  "name": "Lean-Workbook_201542",
+  "module": "internlm/Lean-Workbook",
+  "elaborates": true,
+  "formal": "theorem lean_workbook_plus_42343 (a b : \u211d) (hab : a * b = 1) : a ^ 2 + b ^ 2 + 4 \u2265 3 * (a + b)"
+ },
+ {
+  "name": "IsUnit.mul_eq_mul_of_div_eq_div",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem IsUnit.mul_eq_mul_of_div_eq_div (hb : IsUnit b) (hd : IsUnit d) (a c : \u03b1) (h : a / b = c / d) : a * d = c * b"
+ },
+ {
+  "name": "Herald_statements_8876",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem hom_ext_extracted [CommSemiring R] [AddCommMonoid M] [Module R M] [Semiring A] [Algebra R A] {f g : TensorAlgebra R M \u2192\u2090[R] A} : f.toLinearMap \u2218\u2097 TensorAlgebra.\u03b9 R = g.toLinearMap \u2218\u2097 TensorAlgebra.\u03b9 R \u2192 f = g"
+ },
+ {
+  "name": "Herald_statements_134",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem mk_inv_extracted [Inv M] (a : M) : DomMulAct.mk a\u207b\u00b9 = (DomMulAct.mk a)\u207b\u00b9"
+ },
+ {
+  "name": "Herald_statements_75995",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem rtakeWhile_idempotent_extracted (p : \u03b1 \u2192 Bool) (l : List \u03b1) : List.rtakeWhile p (List.rtakeWhile p l) = List.rtakeWhile p l"
+ },
+ {
+  "name": "NuminaMath-LEAN_148778",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem algebra_85 {x\u2081 x\u2082 : \u211d} (hx\u2081 : x\u2081^2 + x\u2081 - 3 = 0) (hx\u2082 : x\u2082^2 + x\u2082 - 3 = 0) (hne : x\u2081 \u2260 x\u2082) : x\u2081^3 - 4 * x\u2082^2 + 19 = 0"
+ },
+ {
+  "name": "NuminaMath-LEAN_130622",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem algebra_240214 {T : \u2115} (hT : T = Nat.sqrt ((2021 + 2021) + (2021 - 2021) + (2021 * 2021) + (2021 / 2021))) : IsGreatest {p | p.Prime \u2227 p \u2223 T} 337"
+ },
+ {
+  "name": "Herald_statements_64866",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem algebraMap_eq_extracted (R : Type u_1) [CommRing R] [LocalRing R] : algebraMap R (LocalRing.ResidueField R) = LocalRing.residue R"
+ },
+ {
+  "name": "Herald_statements_87062",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem curry_apply_succ_extracted {n : \u2115} {p : Fin (n + 1) \u2192 Type u} (f : ((i : Fin (n + 1)) \u2192 p i) \u2192 \u03c4) (a : p 0) : Function.FromTypes.curry f a = Function.FromTypes.curry (f \u2218 Fin.cons a)"
+ },
+ {
+  "name": "NuminaMath-LEAN_121814",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem algebra_96057 {u : \u2115 \u2192 \u2124} (hu1 : u 1 = 5) (hun : \u2200 n, 1\u2264n \u2192 u (n+1) - u n = 3+4*(n-1)): \u2200 n, 1\u2264n \u2192 u n = 2*n*n-3*n+6"
+ },
+ {
+  "name": "NuminaMath-LEAN_142555",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem inequalities_2575 (f : \u2124 \u2192 \u2124) (fpos : \u2200 n, 0 < n \u2192 0 < f n) : (\u2200 n : \u2124, 0 < n \u2192 (f n) ^ 2 < n * f (n + 1) \u2227 n * f (n + 1) \u2264 2 * n ^ 2 * f (\u230a(n + 1) / 2\u230b\u208a)) \u2192 \u2200 n > 0, f n = 1"
+ },
+ {
+  "name": "Lean-Workbook_196974",
+  "module": "internlm/Lean-Workbook",
+  "elaborates": true,
+  "formal": "theorem lean_workbook_plus_14755 (a b c : \u211d) : 3 * ((a / (a + 2 * b)) ^ 2 + (b / (b + 2 * c)) ^ 2 + (c / (c + 2 * a)) ^ 2) \u2265 (a / (a + 2 * b) + b / (b + 2 * c) + c / (c + 2 * a)) ^ 2"
+ },
+ {
+  "name": "NuminaMath-LEAN_139499",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem number_theory_56583 (a p : \u2124) (hp : Prime p) (hpa : p \u2223 a) (hpr : p \u2261 3 [ZMOD 8] \u2228 p \u2261 -3 [ZMOD 8]) : Set.Finite {n | \u2203 m, a + 2 ^ n = m ^ 2}"
+ },
+ {
+  "name": "Lean-Workbook_198602",
+  "module": "internlm/Lean-Workbook",
+  "elaborates": false,
+  "formal": "theorem lean_workbook_plus_24283 (A B C : \u211d) (hx: A + B + C = \u03c0) : (sin A)^2 + (sin B)^2 + (sin C)^2 = 2*(1 + cos A * cos B * cos C)"
+ },
+ {
+  "name": "Herald_statements_80438",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem preimage_const_mul_Icc_extracted [LinearOrderedField \u03b1] (a b : \u03b1) {c : \u03b1} : 0 < c \u2192 (fun x => c * x) \u207b\u00b9' Set.Icc a b = Set.Icc (a / c) (b / c)"
+ },
+ {
+  "name": "Lean-Workbook_197151",
+  "module": "internlm/Lean-Workbook",
+  "elaborates": true,
+  "formal": "theorem lean_workbook_plus_15822 (a b : \u211d) (hab : a > 0 \u2227 b > 0) : (a + b) ^ 2 \u2265 4 * a * b"
+ },
+ {
+  "name": "iInf_univ",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem iInf_univ {f : \u03b2 \u2192 \u03b1} : \u2a05 x \u2208 (univ : Set \u03b2), f x = \u2a05 x, f x"
+ },
+ {
+  "name": "NuminaMath-LEAN_107768",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": false,
+  "formal": "theorem inequalities_265639 (x : \u211d) : -1/4 \u2264 5*(cos x)^2 - 5*(cos x)^4 + 5*(sin x)*(cos x) + 1 \u2227 5*(cos x)^2 - 5*(cos x)^4 + 5*(sin x)*(cos x) + 1 \u2264 19/4"
+ },
+ {
+  "name": "NuminaMath-LEAN_135542",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": false,
+  "formal": "theorem algebra_146639 (a : \u211d) : (\u2203 x1 x2 : \u211d, a * x1 ^ 2 - (a + 3) * x1 + 2 = 0 \u2227 a * x2 ^ 2 - (a + 3) * x2 + 2 = 0 \u2227 sign x1 \u2260 sign x2 \u2227 x1 \u2260 0 \u2227 x2 \u2260 0) \u2194 a < 0"
+ },
+ {
+  "name": "Herald_statements_21925",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem sqrtTwoAddSeries_one_extracted : Real.sqrtTwoAddSeries 0 1 = \u221a2"
+ },
+ {
+  "name": "Herald_statements_81531",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem ofReal_ne_top_extracted {r : \u211d} : ENNReal.ofReal r \u2260 \u22a4"
+ },
+ {
+  "name": "Herald_statements_4507",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem withDensity\u1d65_trim_absolutelyContinuous_extracted [NormedAddCommGroup E] [NormedSpace \u211d E] {f : \u03b1 \u2192 E} {m m0 : MeasurableSpace \u03b1} {\u03bc : MeasureTheory.Measure \u03b1} (hm : m \u2264 m0) : MeasureTheory.Integrable f \u03bc \u2192 (\u03bc.withDensity\u1d65 f).trim hm \u226a\u1d65 (\u03bc.trim hm).toENNRealVectorMeasure"
+ },
+ {
+  "name": "Herald_statements_65641",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem mem_image_extracted (r : Rel \u03b1 \u03b2) (y : \u03b2) (s : Set \u03b1) : y \u2208 r.image s \u2194 \u2203 x \u2208 s, r x y"
+ },
+ {
+  "name": "NuminaMath-LEAN_129958",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem algebra_13739 (x y : \u211d) (h\u2081 : Real.sin x / Real.sin y = 3) (h\u2082 : Real.cos x / Real.cos y = 1 / 2) : Real.sin (2 * x) / Real.sin (2 * y) + Real.cos (2 * x) / Real.cos (2 * y) = 49 / 58"
+ },
+ {
+  "name": "nhds_basis_uniformity'",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem nhds_basis_uniformity' {p : \u03b9 \u2192 Prop} {s : \u03b9 \u2192 Set (\u03b1 \u00d7 \u03b1)} (h : (\ud835\udce4 \u03b1).HasBasis p s) {x : \u03b1} : (\ud835\udcdd x).HasBasis p fun i => ball x (s i)"
+ },
+ {
+  "name": "Herald_statements_22754",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem not_differentiableAt_of_local_left_inverse_hasDerivAt_zero_extracted [NontriviallyNormedField \ud835\udd5c] {f g : \ud835\udd5c \u2192 \ud835\udd5c} {a : \ud835\udd5c} : HasDerivAt f 0 (g a) \u2192 f \u2218 g =\u1da0[\ud835\udcdd a] id \u2192 \u00acDifferentiableAt \ud835\udd5c g a"
+ },
+ {
+  "name": "NuminaMath-LEAN_136735",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem number_theory_116787 (n M : \u2115) (hn : 0 < n) (hM : M > n ^ (n - 1)) : \u2203 p : Finset.Icc 1 n \u2192 \u2115, (\u2200 i j, p i = p j \u2192 i = j) \u2227 (\u2200 i, Nat.Prime (p i)) \u2227 (\u2200 j, p j \u2223 M + j)"
+ },
+ {
+  "name": "NuminaMath-LEAN_106186",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": false,
+  "formal": "theorem number_theory_4762 : {p | is_prime p \u2227 is_sum_of_squares p} = {2} \u222a {p | is_prime p \u2227 p \u2261 1 [MOD 4]}"
+ },
+ {
+  "name": "balancedCoreAux_empty",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem balancedCoreAux_empty : balancedCoreAux \ud835\udd5c (\u2205 : Set E) = \u2205"
+ },
+ {
+  "name": "Matrix.IsHermitian.adjugate",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem Matrix.IsHermitian.adjugate [Fintype m] [DecidableEq m] {A : Matrix m m \u03b1} (hA : A.IsHermitian) : A.adjugate.IsHermitian"
+ },
+ {
+  "name": "Lean-Workbook_202622",
+  "module": "internlm/Lean-Workbook",
+  "elaborates": true,
+  "formal": "theorem lean_workbook_plus_49054 (x y : \u211d) (hx : 0 < x) (hy : 0 < y) : 1 / (x * y) \u2265 (2 / (x + y))^2"
+ },
+ {
+  "name": "Herald_statements_67835",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem induction_on_adjoin_extracted [CommSemiring R] [Semiring A] [Algebra R A] [IsNoetherian R A] (P : Subalgebra R A \u2192 Prop) : P \u22a5 \u2192 (\u2200 (S : Subalgebra R A) (x : A), P S \u2192 P (Algebra.adjoin R (insert x \u2191S))) \u2192 \u2200 (S : Subalgebra R A), P S"
+ },
+ {
+  "name": "Herald_statements_15266",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem eval_continuousLinearMap_extracted [NontriviallyNormedField \ud835\udd5c] [NormedAddCommGroup E] [NormedSpace \ud835\udd5c E] [NormedCommRing B] [NormedAlgebra \ud835\udd5c B] (f : E \u2192L[\ud835\udd5c] \u03c3 \u2192 B) (p : MvPolynomial \u03c3 B) : AnalyticOn \ud835\udd5c (fun x => (MvPolynomial.eval (f x)) p) Set.univ"
+ },
+ {
+  "name": "NuminaMath-LEAN_130913",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem number_theory_320270 : \u2200 N : \u2115, \u2203 n : \u2115, n > N \u2227 \u00ac\u2203 m : \u2124, m^3 = n \u2227 \u2203 a b c : \u211d, a = n ^ ((1 : \u211d) / 3) \u2227 b = 1 / (a - \u230aa\u230b) \u2227 c = 1 / (b - \u230ab\u230b) \u2227 \u2203 r s t : \u2124, (r \u2260 0 \u2228 s \u2260 0 \u2228 t \u2260 0) \u2227 r * a + s * b + t * c = 0"
+ },
+ {
+  "name": "NuminaMath-LEAN_131388",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": true,
+  "formal": "theorem inequalities_133965 (a b c d : \u211d) (ha : 0 < a) (hb : 0 < b) (hc : 0 < c) (hd : 0 < d) (h : a + b + c + d = 1) : 1 / 2 \u2264 a ^ 2 / (a + b) + b ^ 2 / (b + c) + c ^ 2 / (c + d) + d ^ 2 / (d + a) \u2227 (1 / 2 = a ^ 2 / (a + b) + b ^ 2 / (b + c) + c ^ 2 / (c + d) + d ^ 2 / (d + a) \u2194 (a = b \u2227 b = c \u2227 c = d))"
+ },
+ {
+  "name": "Cycle.next_reverse_eq_prev",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem Cycle.next_reverse_eq_prev (s : Cycle \u03b1) (hs : Nodup s) (x : \u03b1) (hx : x \u2208 s) : s.reverse.next (nodup_reverse_iff.mpr hs) x (mem_reverse_iff.mpr hx) = s.prev hs x hx"
+ },
+ {
+  "name": "Herald_statements_61470",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem lsub_eq_of_range_eq_extracted {f : \u03b9 \u2192 Ordinal.{max (max u v) w}} {g : \u03b9' \u2192 Ordinal.{max (max u v) w}} : range f = range g \u2192 Ordinal.lsub f = Ordinal.lsub g"
+ },
+ {
+  "name": "Metric.dist_le_infDist_add_diam",
+  "module": "FrenzyMath/Herald_proofs",
+  "elaborates": false,
+  "formal": "theorem Metric.dist_le_infDist_add_diam (hs : IsBounded s) (hy : y \u2208 s) : dist x y \u2264 infDist x s + diam s"
+ },
+ {
+  "name": "Herald_statements_77704",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": true,
+  "formal": "theorem findGreatest_eq_zero_iff_extracted {k : \u2115} {P : \u2115 \u2192 Prop} [DecidablePred P] : Nat.findGreatest P k = 0 \u2194 \u2200 \u2983n : \u2115\u2984, 0 < n \u2192 n \u2264 k \u2192 \u00acP n"
+ },
+ {
+  "name": "NuminaMath-LEAN_111150",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": false,
+  "formal": "theorem calculus_137283 : Tendsto (\u03bb n => (sqrt (3 * n - 1) - (125 * n ^ 3 + n) ^ ((1 : \u211d) / 3)) / (n ^ ((1 : \u211d) / 3) - n)) atTop (\ud835\udcdd 5)"
+ },
+ {
+  "name": "Herald_statements_73837",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem pow_def_extracted (a : UInt32) (n : \u2115) : a ^ n = { val"
+ },
+ {
+  "name": "NuminaMath-LEAN_120217",
+  "module": "AI-MO/NuminaMath-LEAN",
+  "elaborates": false,
+  "formal": "theorem algebra_325801 {f : \u211d \u2192 \u211d} (hf : \u2200 x, f x = (sqrt 2 * sin (x + \u03c0 / 4) + 2 * x ^ 2 + x) / (2 * x ^ 2 + cos x)) (hmax : IsGreatest (f '' Set.univ) M) (hmin : IsLeast (f '' Set.univ) m) : M + m = 2"
+ },
+ {
+  "name": "Herald_statements_41905",
+  "module": "FrenzyMath/Herald_statements",
+  "elaborates": false,
+  "formal": "theorem of_iso_extracted [CategoryTheory.Category.{v\u2081 : u\u2081} C] [CategoryTheory.Category.{v\u2082, u\u2082} D] {F F' : CategoryTheory.Functor C D} [F.Faithful], (F \u2245 F') \u2192 F'.Faithful"
+ }
+]

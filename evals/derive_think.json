@@ -1,0 +1,98 @@
+[
+ {
+  "mode": "off",
+  "case": "co_sum_first_n",
+  "n": 3,
+  "passes": 1,
+  "mean_secs": 32.1,
+  "runs": [
+   {
+    "ok": true,
+    "secs": 47.4,
+    "sig": "theorem sum_first_n_positive_integers (n : \u2115) : (\u2211 i \u2208 Finset.range n, (i + 1)) = n * (n + 1) / 2"
+   },
+   {
+    "ok": false,
+    "secs": 27.0,
+    "sig": ""
+   },
+   {
+    "ok": false,
+    "secs": 21.9,
+    "sig": ""
+   }
+  ]
+ },
+ {
+  "mode": "off",
+  "case": "ge_triangle_ineq",
+  "n": 3,
+  "passes": 2,
+  "mean_secs": 38.7,
+  "runs": [
+   {
+    "ok": true,
+    "secs": 57.5,
+    "sig": "theorem norm_sum_le_sum_norms (E : Type*) [NormedAddCommGroup E] [InnerProductSpace \u211d E] (x y : E) : \u2016x + y\u2016 \u2264 \u2016x\u2016 + \u2016y\u2016"
+   },
+   {
+    "ok": true,
+    "secs": 28.2,
+    "sig": "theorem norm_sum_le_sum_norms (E : Type*) [NormedAddCommGroup E] [InnerProductSpace \u211d E] (x y : E) : \u2016x + y\u2016 \u2264 \u2016x\u2016 + \u2016y\u2016"
+   },
+   {
+    "ok": false,
+    "secs": 30.5,
+    "sig": ""
+   }
+  ]
+ },
+ {
+  "mode": "off",
+  "case": "an_cont_compact",
+  "n": 3,
+  "passes": 3,
+  "mean_secs": 26.6,
+  "runs": [
+   {
+    "ok": true,
+    "secs": 29.9,
+    "sig": "theorem continuous_function_attains_maximum_on_closed_bounded_interval (f : \u211d \u2192 \u211d) (a b : \u211d) (hab : a \u2264 b) (hf : ContinuousOn f (Set.Icc a b)) : \u2203 x \u2208 Set.Icc a"
+   },
+   {
+    "ok": true,
+    "secs": 27.0,
+    "sig": "theorem continuous_function_attains_maximum_on_closed_bounded_interval (f : \u211d \u2192 \u211d) (a b : \u211d) (hab : a \u2264 b) (hf : ContinuousOn f (Set.Icc a b)) : \u2203 x \u2208 Set.Icc a"
+   },
+   {
+    "ok": true,
+    "secs": 22.9,
+    "sig": "theorem continuous_function_attains_maximum_on_closed_bounded_interval (f : \u211d \u2192 \u211d) (a b : \u211d) (hab : a \u2264 b) (hf : ContinuousOn f (Set.Icc a b)) : \u2203 x \u2208 Set.Icc a"
+   }
+  ]
+ },
+ {
+  "mode": "high",
+  "case": "co_sum_first_n",
+  "n": 3,
+  "passes": 1,
+  "mean_secs": 408.3,
+  "runs": [
+   {
+    "ok": false,
+    "secs": 223.6,
+    "sig": ""
+   },
+   {
+    "ok": true,
+    "secs": 625.2,
+    "sig": "theorem sum_first_n_positive_integers (n : \u2115) : Finset.sum (Finset.range n) (fun i => i + 1) = n * (n + 1) / 2"
+   },
+   {
+    "ok": false,
+    "secs": 376.1,
+    "sig": ""
+   }
+  ]
+ }
+]
